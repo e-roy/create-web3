@@ -4,7 +4,7 @@ const path = require('path');
 const chalk = require('chalk');
 const installDep = require('./install');
 
-const installHardhat = async (installFlags, typescript) => {
+const installHardhat = async (appPath, installFlags, typescript) => {
   console.log('running install hardhat');
   const root = path.resolve(appPath);
   /**

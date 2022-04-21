@@ -97,11 +97,11 @@ const init = async ({ appPath, useNpm, typescript }) => {
   /**
    * Create Next package.json and install dependencies.
    */
-  await installNext.installNext(installFlags, typescript);
+  await installNext.installNext(appPath, installFlags, typescript);
   /**
    * Create hardhat package.json and install dependencies.
    */
-  await installHardhat.installHardhat(installFlags, typescript);
+  await installHardhat.installHardhat(appPath, installFlags, typescript);
 
   console.log();
   /**
