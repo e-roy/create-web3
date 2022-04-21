@@ -57,7 +57,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
    * Create a package.json for the new project.
    */
   const packageJson = {
-    name: appName,
+    name: 'create-web3',
     version: '0.0.1',
     description: 'mono repo with hardhat and next',
     main: 'index.js',
