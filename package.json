@@ -1,0 +1,28 @@
+{
+  "name": "create-web3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "yarn workspace @create-web3/next-app dev",
+    "build": "yarn workspace @create-web3/next-app build",
+    "start": "yarn workspace @create-web3/next-app start",
+    "lint": "yarn workspace @create-web3/next-app lint",
+    "chain": "yarn workspace @create-web3/next-app chain",
+    "compile": "yarn workspace @create-web3/next-app compile",
+    "clean": "yarn workspace @create-web3/next-app clean",
+    "deploy": "yarn workspace @create-web3/next-app deploy",
+    "deploy:rinkeby": "yarn workspace @create-web3/next-app deploy:rinkeby",
+    "deploy:mainnet": "yarn workspace @create-web3/next-app deploy:mainnet",
+    "update-version": "lerna version --force-publish --no-private",
+    "publish-latest": "lerna publish from-package",
+    "create-web3": "node ./packages/create-web3/index.js"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/create-web3/templates/*",
+    "packages/create-web3/templates/default/packages/*"
+  ]
+}
