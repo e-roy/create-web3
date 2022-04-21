@@ -33,7 +33,7 @@ const installHardhat = async (appPath, installFlags, typescript) => {
   /**
    * Default dependencies.
    */
-  const dependencies = ['dotenv@16.0.0'];
+  const dependencies = ['dotenv'];
   /**
    * Default devDependencies.
    */

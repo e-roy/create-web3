@@ -68,7 +68,7 @@ const installNext = async (appPath, installFlags, typescript) => {
       console.log(`- ${chalk.cyan(dependency)}`);
     }
     console.log();
-
+    console.log('installDir : ', installDir);
     await installDep.install(installDir, dependencies, installFlags);
   }
   /**
