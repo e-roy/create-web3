@@ -38,12 +38,12 @@ const installNext = async (appPath, installFlags, typescript) => {
    * Default dependencies.
    */
   const dependencies = [
-    'ethers@^5.6.4',
-    'latest@^0.2.0',
-    'next@12.1.4',
-    'react@18.0.0',
-    'react-dom@18.0.0',
-    'wagmi@^0.2.28',
+    'ethers',
+    'latest',
+    'next',
+    'react',
+    'react-dom',
+    'wagmi',
   ];
   /**
    * Default devDependencies.
@@ -53,11 +53,7 @@ const installNext = async (appPath, installFlags, typescript) => {
    * TypeScript projects will have type definitions and other devDependencies.
    */
   if (typescript) {
-    devDependencies.push(
-      'typescript@4.6.3',
-      '@types/react@18.0.5',
-      '@types/node@17.0.25'
-    );
+    devDependencies.push('typescript', '@types/react', '@types/node');
   }
   /**
    * Install package.json dependencies if they exist.
