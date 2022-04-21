@@ -15,10 +15,10 @@ const installHardhat = require('./helpers/install-hardhat');
 
 const init = async ({ appPath, useNpm, typescript }) => {
   console.log('running create app');
-  console.log(typescript);
+  // console.log(typescript);
   const template = typescript ? 'typescript' : 'default';
   const root = path.resolve(appPath);
-  console.log(template);
+  // console.log(template);
 
   if (!(await checkWriteable.isWriteable(path.dirname(root)))) {
     console.error(
@@ -97,11 +97,11 @@ const init = async ({ appPath, useNpm, typescript }) => {
   /**
    * Create Next package.json and install dependencies.
    */
-  await installNext.installNext(root, installFlags, typescript);
+  await installNext.installNext(installFlags, typescript);
   /**
    * Create hardhat package.json and install dependencies.
    */
-  await installHardhat.installHardhat(root, installFlags, typescript);
+  await installHardhat.installHardhat(installFlags, typescript);
 
   console.log();
   /**

@@ -4,8 +4,9 @@ const path = require('path');
 const chalk = require('chalk');
 const installDep = require('./install');
 
-const installNext = async (root, installFlags, typescript) => {
+const installNext = async (installFlags, typescript) => {
   console.log('running install next');
+  const root = path.resolve(appPath);
 
   /**
    * Create a package.json for the next-app.
