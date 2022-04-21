@@ -6,6 +6,11 @@ template/cache
 node_modules
 .next
 
+artifacts
+deployments
+cache
+
+
 templates/default/packages/hardhat/artifacts/*
 templates/default/packages/hardhat/deployments/*
 templates/default/packages/hardhat/cache/*
