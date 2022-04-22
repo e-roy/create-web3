@@ -35,7 +35,7 @@ const install = (
         /**
          * Call `yarn add --exact (--offline)? (-D)? ...`.
          */
-        args = ['add', '--exact'];
+        args = ['add', '--exact', '--legacy-peer-deps'];
         if (!isOnline) args.push('--offline');
         args.push('--cwd', root);
         if (devDependencies) args.push('--dev');
@@ -44,7 +44,7 @@ const install = (
         /**
          * Call `npm install [--save|--save-dev] ...`.
          */
-        args = ['install', '--save-exact --legacy-peer-deps'];
+        args = ['install', '--save-exact', '--legacy-peer-deps'];
         args.push(devDependencies ? '--save-dev' : '--save');
         args.push(...dependencies);
       }
