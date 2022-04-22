@@ -5,6 +5,7 @@ const { Command } = require('commander');
 const path = require('path');
 const prompts = require('prompts');
 const { init } = require('./create-app');
+const checkForUpdate = require('update-check');
 const validated = require('./helpers/validate-pkg');
 const packageJson = require('./package.json');
 
