@@ -6,6 +6,11 @@
   "keywords": [],
   "author": "Eric Roupe",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e-roy/create-web3",
+    "directory": "packages/create-web3"
+  },
   "bin": {
     "create-web3": "./index.js"
   },

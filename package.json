@@ -21,7 +21,8 @@
     "deploy:ts": "yarn workspace @create-web3/next-app-ts deploy",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "lerna publish from-package",
-    "create-web3": "node ./packages/create-web3/index.js"
+    "create-web3": "node ./packages/create-web3/index.js",
+    "dev:docs": "yarn workspace @create-web3-docs/docs dev"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
@@ -30,6 +31,7 @@
     "packages/*",
     "packages/create-web3/templates/*",
     "packages/create-web3/templates/default/packages/*",
-    "packages/create-web3/templates/typescript/packages/*"
+    "packages/create-web3/templates/typescript/packages/*",
+    "docs/"
   ]
 }
