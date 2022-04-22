@@ -18,8 +18,10 @@ templates/default/packages/next-app/contracts/*
 
 templates/typescript/packages/next-app/contracts/*
 
+templates/default/packages/package.json
 templates/default/packages/next-app/package.json
 templates/default/packages/hardhat/package.json
 
+templates/typescript/packages/package.json
 templates/typescript/packages/next-app/package.json
 templates/typescript/packages/hardhat/package.json
