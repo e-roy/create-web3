@@ -31,24 +31,19 @@ const installNext = async (appPath, installFlags, typescript) => {
   );
 
   /**
-   * These flags will be passed to `install()`.
-   */
-  // const installFlags = { useYarn, isOnline };
-  /**
    * Default dependencies.
    */
   const dependencies = [
-    'ethers',
-    'latest',
-    'next',
-    'react',
-    'react-dom',
-    'wagmi',
+    'ethers@5.6.4',
+    'next@12.1.4',
+    'react@18.0.0',
+    'react-dom@18.0.0',
+    'wagmi@0.2.28',
   ];
   /**
    * Default devDependencies.
    */
-  const devDependencies = ['eslint', 'eslint-config-next'];
+  const devDependencies = ['eslint@8.12.0', 'eslint-config-next@12.1.4'];
   /**
    * TypeScript projects will have type definitions and other devDependencies.
    */
