@@ -23,7 +23,7 @@ Read the [CONTRIBUTING GUIDELINES](/CONTRIBUTING.md).
 
 ## Issues
 
-If you find a bug or would like to request a feature, please visit
+If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/e-roy/create-web3/issues)
 
 ## Quick Start Notes
 
