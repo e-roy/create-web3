@@ -19,7 +19,6 @@ const installHardhat = async (appPath, installFlags, typescript) => {
       clean: 'npx hardhat clean',
       deploy:
         'hardhat deploy --export-all ../next-app/contracts/hardhat_contracts.json',
-      postdeploy: 'hardhat run scripts/publish.js',
     },
   };
   /**
