@@ -44,7 +44,7 @@ const install = (
         /**
          * Call `npm install [--save|--save-dev] ...`.
          */
-        args = ['install', '--save-exact'];
+        args = ['install', '--save-exact --legacy-peer-deps'];
         args.push(devDependencies ? '--save-dev' : '--save');
         args.push(...dependencies);
       }

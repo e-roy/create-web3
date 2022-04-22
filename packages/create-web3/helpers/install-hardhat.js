@@ -44,7 +44,7 @@ const installHardhat = async (appPath, installFlags, typescript) => {
     '@openzeppelin/contracts',
     'chai',
     'ethereum-waffle',
-    'ethers@5.6.4',
+    'ethers',
     'hardhat',
     'hardhat-deploy',
   ];

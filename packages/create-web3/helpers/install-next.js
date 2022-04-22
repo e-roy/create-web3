@@ -34,7 +34,7 @@ const installNext = async (appPath, installFlags, typescript) => {
    * Default dependencies.
    */
   const dependencies = [
-    'ethers@5.6.4',
+    'ethers',
     'next@12.1.4',
     'react@18.0.0',
     'react-dom@18.0.0',
