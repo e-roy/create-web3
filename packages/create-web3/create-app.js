@@ -43,7 +43,8 @@ const init = async ({ appPath, useNpm, typescript }) => {
   await makeDir.makeDir(path.join(root, 'packages', 'next-app'));
   await makeDir.makeDir(path.join(root, 'packages', 'hardhat'));
 
-  const useYarn = useNpm ? false : checkYarn.shouldUseYarn();
+  // const useYarn = useNpm ? false : checkYarn.shouldUseYarn();
+  const useYarn = useNpm ? false : true;
   const isOnline = !useYarn || (await checkOnline.getOnline());
   const originalDirectory = process.cwd();
 
@@ -87,23 +88,23 @@ const init = async ({ appPath, useNpm, typescript }) => {
   /**
    * Write it to disk.
    */
-  fs.writeFileSync(
-    path.join(root, 'package.json'),
-    JSON.stringify(packageJson, null, 2) + os.EOL
-  );
+  // fs.writeFileSync(
+  //   path.join(root, 'package.json'),
+  //   JSON.stringify(packageJson, null, 2) + os.EOL
+  // );
 
   /**
    * These flags will be passed to `install()`.
    */
-  const installFlags = { useYarn, isOnline };
+  // const installFlags = { useYarn, isOnline };
   /**
    * Create Next package.json and install dependencies.
    */
-  await installNext.installNext(appPath, installFlags, typescript);
+  // await installNext.installNext(appPath, installFlags, typescript);
   /**
    * Create hardhat package.json and install dependencies.
    */
-  await installHardhat.installHardhat(appPath, installFlags, typescript);
+  // await installHardhat.installHardhat(appPath, installFlags, typescript);
 
   console.log();
   /**

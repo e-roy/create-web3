@@ -13,7 +13,6 @@
     "deploy": "yarn workspace @project/hardhat-ts deploy"
   },
   "author": "",
-  "license": "ISC",
   "workspaces": {
     "packages": [
       "packages/*"
