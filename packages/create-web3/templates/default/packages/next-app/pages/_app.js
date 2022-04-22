@@ -1,14 +1,14 @@
-import "../styles/globals.css";
+import '../styles/globals.css';
 
-import * as React from "react";
-import { providers } from "ethers";
-import NextHead from "next/head";
+import * as React from 'react';
+import { providers } from 'ethers';
+import NextHead from 'next/head';
 
 // Imports
-import { Connector, Provider, chain, defaultChains } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
-import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import { WalletLinkConnector } from "wagmi/connectors/walletLink";
+import { Provider, chain, defaultChains } from 'wagmi';
+import { InjectedConnector } from 'wagmi/connectors/injected';
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
 
 // Get environment variables
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID;
@@ -33,10 +33,10 @@ const connectors = ({ chainId }) => {
         qrcode: true,
       },
     }),
-    new WalletLinkConnector({
+    new CoinbaseWalletConnector({
       chains,
       options: {
-        appName: "wagmi",
+        appName: 'create-web3',
         jsonRpcUrl: `${rpcUrl}/${infuraId}`,
       },
     }),
@@ -68,7 +68,7 @@ const App = ({ Component, pageProps }) => {
       webSocketProvider={webSocketProvider}
     >
       <NextHead>
-        <title>wagmi</title>
+        <title>create-web3</title>
       </NextHead>
 
       <Component {...pageProps} />

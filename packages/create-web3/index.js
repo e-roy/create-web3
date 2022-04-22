@@ -37,7 +37,7 @@ async function run() {
     projectPath = projectPath.trim();
   }
   if (!projectPath) {
-    const res = await prompts({
+    const resName = await prompts({
       type: 'text',
       name: 'path',
       message: 'What is your Web3 app named?',
@@ -54,10 +54,30 @@ async function run() {
       },
     });
 
-    if (typeof res.path === 'string') {
-      projectPath = res.path.trim();
+    if (typeof resName.path === 'string') {
+      projectPath = resName.path.trim();
     }
   }
+
+  const resTypescript = await prompts({
+    type: 'select',
+    name: 'typescript',
+    message: 'Javascript or Typescript?',
+    choices: [
+      { title: 'Javascript', value: false },
+      { title: 'Typescript', value: true },
+    ],
+  });
+
+  const resUseNpm = await prompts({
+    type: 'select',
+    name: 'useNpm',
+    message: 'Use NPM or YARN?',
+    choices: [
+      { title: 'NPM', value: true },
+      { title: 'YARN', value: false },
+    ],
+  });
 
   const resolvedProjectPath = path.resolve(projectPath);
   const projectName = path.basename(resolvedProjectPath);
@@ -77,8 +97,8 @@ async function run() {
   try {
     await init({
       appPath: resolvedProjectPath,
-      useNpm: !!program.opts().useNpm,
-      typescript: program.opts().typescript,
+      useNpm: resUseNpm.useNpm,
+      typescript: resTypescript.typescript,
     });
   } catch (error) {
     console.log(error);
@@ -93,7 +113,11 @@ run()
     if (reason.command) {
       console.log(`  ${chalk.cyan(reason.command)} has failed.`);
     } else {
-      console.log(chalk.red('Unexpected error. Please report it as a bug:'));
+      console.log(
+        chalk.red(
+          'Unexpected error. Please report it as a bug: https://github.com/e-roy/create-web3/issues'
+        )
+      );
       console.log(reason);
     }
     console.log();

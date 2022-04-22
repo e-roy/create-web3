@@ -1,5 +1,5 @@
 import { useNetwork } from 'wagmi';
-import config from '../../config.json';
+import config from '@/config.json';
 
 export const SwitchNetwork = () => {
   const [{ data: networkData }, switchNetwork] = useNetwork();

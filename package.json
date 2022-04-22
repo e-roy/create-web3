@@ -8,11 +8,17 @@
     "start": "yarn workspace @create-web3/next-app start",
     "lint": "yarn workspace @create-web3/next-app lint",
     "chain": "yarn workspace @create-web3/next-app chain",
-    "compile": "yarn workspace @create-web3/next-app compile",
     "clean": "yarn workspace @create-web3/next-app clean",
     "deploy": "yarn workspace @create-web3/next-app deploy",
     "deploy:rinkeby": "yarn workspace @create-web3/next-app deploy:rinkeby",
     "deploy:mainnet": "yarn workspace @create-web3/next-app deploy:mainnet",
+    "dev:ts": "yarn workspace @create-web3/next-app-ts dev",
+    "build:ts": "yarn workspace @create-web3/next-app-ts build",
+    "start:ts": "yarn workspace @create-web3/next-app-ts start",
+    "lint:ts": "yarn workspace @create-web3/next-app-ts lint",
+    "chain:ts": "yarn workspace @create-web3/next-app-ts chain",
+    "clean:ts": "yarn workspace @create-web3/next-app-ts clean",
+    "deploy:ts": "yarn workspace @create-web3/next-app-ts deploy",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "lerna publish from-package",
     "create-web3": "node ./packages/create-web3/index.js"
@@ -23,6 +29,7 @@
   "workspaces": [
     "packages/*",
     "packages/create-web3/templates/*",
-    "packages/create-web3/templates/default/packages/*"
+    "packages/create-web3/templates/default/packages/*",
+    "packages/create-web3/templates/typescript/packages/*"
   ]
 }
