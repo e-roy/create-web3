@@ -1,6 +1,6 @@
 {
   "name": "@create-web3-docs/docs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "dev": "next",
