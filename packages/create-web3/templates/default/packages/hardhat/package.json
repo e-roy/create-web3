@@ -6,8 +6,7 @@
   "scripts": {
     "chain": "hardhat node --network hardhat --no-deploy",
     "clean": "npx hardhat clean",
-    "deploy": "hardhat deploy --export-all ../next-app/contracts/hardhat_contracts.json",
-    "postdeploy": "hardhat run scripts/publish.js"
+    "deploy": "hardhat deploy --export-all ../next-app/contracts/hardhat_contracts.json"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
