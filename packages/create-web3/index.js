@@ -129,6 +129,8 @@ async function notifyUpdate() {
           )
       );
       console.log();
+    } else {
+      console.log(chalk.green('You are running the latest version.'));
     }
     process.exit();
   } catch {
