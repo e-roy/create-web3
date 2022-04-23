@@ -1,9 +1,5 @@
 # create-web3
 
-## STILL TESTING
-
-I'm hoping to finish up in the next couple of days. Thank you for visiting.
-
 To use the npx package run, in a terminal:
 `npx create-web3`
 

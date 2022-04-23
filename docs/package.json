@@ -2,6 +2,7 @@
   "name": "@create-web3-docs/docs",
   "version": "0.1.0",
   "description": "",
+  "private": true,
   "scripts": {
     "dev": "next",
     "start": "next start",
@@ -16,5 +17,6 @@
     "nextra-theme-docs": "1.2.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  }
+  },
+  "gitHead": "da4ed9ad6fa2d4386d4e35e60c221fda2bc5ccaa"
 }
