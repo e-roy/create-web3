@@ -1,34 +1,17 @@
 # create-web3
 
-_In Development 🏗️_
+A boilerplate for starting a web3 project.
+
+This boilerplate quickly creates a mono repo with 2 environments, a Next JS environment for front-end and a Hardhat environment for writing, testing and deploying contracts.
 
 ## Quick Start Notes
 
-To start the dev environment for hardhat:
-
-```shell
-yarn chain
-```
-
-In a 2nd terminal, for deploying contracts:
-
-```shell
-yarn deploy
-```
-
-In a 3rd terminal to start the dev server on your network:
-
-```shell
-yarn dev
-```
-
-## Extended User Docs
-
-For more information please refer to
-
-## Issues
-
-If you find a bug or would like to request a feature, please visit
+1.  Run `npx create-web3` to start install
+2.  Run `yarn` or `npm install` to install all the dependencies
+3.  Once installation is complete, `cd` into your app's directory and run `yarn chain` or `npm run chain` to start a local hardhat environment
+4.  Open another terminal and `cd` into your app's directory
+5.  Run `yarn deploy` or `npm run deploy` to deploy the example contract locally
+6.  Run `yarn dev` or `npm run dev` to start your Next dev environment
 
 ## Technologies
 
@@ -39,3 +22,11 @@ This project is built with the following open source libraries, frameworks and l
 | [Hardhat](https://hardhat.org/) | Ethereum development environment |
 | [hardhat-deploy](https://www.npmjs.com/package/hardhat-deploy) | A Hardhat Plugin For Replicable Deployments And Easy Testing |
 | [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
+
+## Documentation
+
+Please visit [create-web3.xyz](create-web3.xyz) to view the full documentation.
+
+## Issues
+
+If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/e-roy/create-web3/issues)

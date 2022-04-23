@@ -162,7 +162,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
   console.log();
   console.log('In one terminal type:');
   console.log(chalk.cyan('  cd'), cdpath);
-  console.log(chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'install '}`));
+  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'install '}`));
   console.log(
     `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}chain`)}`
   );

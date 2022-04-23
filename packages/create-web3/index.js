@@ -8,6 +8,7 @@ const { init } = require('./create-app');
 const checkForUpdate = require('update-check');
 const validated = require('./helpers/validate-pkg');
 const packageJson = require('./package.json');
+const { getPkgManager } = require('./helpers/get-pkg-manager');
 
 let projectPath = '';
 
@@ -106,8 +107,37 @@ async function run() {
   }
 }
 
+const update = checkForUpdate(packageJson).catch(() => null);
+
+async function notifyUpdate() {
+  try {
+    console.log('Checking for updates...');
+    const res = await update;
+    if (res?.latest) {
+      const pkgManager = getPkgManager();
+
+      console.log();
+      console.log(
+        chalk.yellow.bold('A new version of `create-web3` is available!')
+      );
+      console.log(
+        'You can update by running: ' +
+          chalk.cyan(
+            pkgManager === 'yarn'
+              ? 'yarn global add create-web3'
+              : `${pkgManager} install --global create-web3`
+          )
+      );
+      console.log();
+    }
+    process.exit();
+  } catch {
+    // ignore error
+  }
+}
+
 run()
-  .then()
+  .then(notifyUpdate)
   .catch(async (reason) => {
     console.log();
     console.log('Aborting installation.');
@@ -122,6 +152,8 @@ run()
       console.log(reason);
     }
     console.log();
+
+    await notifyUpdate();
 
     process.exit(1);
   });

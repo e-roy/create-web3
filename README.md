@@ -1,7 +1,17 @@
 # create-web3
 
-To use the npx package run, in a terminal:
-`npx create-web3`
+A boilerplate for starting a web3 project.
+
+This boilerplate quickly creates a mono repo with 2 environments, a Next JS environment for front-end and a Hardhat environment for writing, testing and deploying contracts.
+
+## Quick Start Notes
+
+1.  Run `npx create-web3` to start install
+2.  Run `yarn` or `npm install` to install all the dependencies
+3.  Once installation is complete, `cd` into your app's directory and run `yarn chain` or `npm run chain` to start a local hardhat environment
+4.  Open another terminal and `cd` into your app's directory
+5.  Run `yarn deploy` or `npm run deploy` to deploy the example contract locally
+6.  Run `yarn dev` or `npm run dev` to start your Next dev environment
 
 ## Technologies
 
@@ -13,28 +23,10 @@ This project is built with the following open source libraries, frameworks and l
 | [hardhat-deploy](https://www.npmjs.com/package/hardhat-deploy) | A Hardhat Plugin For Replicable Deployments And Easy Testing |
 | [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
 
-## How to Contribute
+## Documentation
 
-Read the [CONTRIBUTING GUIDELINES](/CONTRIBUTING.md).
+Please visit [create-web3.xyz](create-web3.xyz) to view the full documentation.
 
 ## Issues
 
 If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/e-roy/create-web3/issues)
-
-## Quick Start Notes
-
-### For Development
-
-1.  Run `yarn`
-2.  In one terminal
-3.  Run `yarn chain`
-4.  In another terminal
-5.  Run `yarn deploy`
-6.  Run `yarn dev`
-
-### For Publishing
-
-1.  Run `yarn update-version`
-2.  Then run `yarn publish-latest`
-
-## [Contributing](CONTRIBUTING.md)
