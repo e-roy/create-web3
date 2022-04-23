@@ -2,6 +2,15 @@
   "name": "create-web3",
   "version": "0.0.0",
   "private": true,
+  "keywords": [
+    "create-web3",
+    "web3",
+    "boilerplate",
+    "nextjs",
+    "react",
+    "wagmi",
+    "hardhat"
+  ],
   "scripts": {
     "dev": "yarn workspace @create-web3/next-app dev",
     "build": "yarn workspace @create-web3/next-app build",

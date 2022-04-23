@@ -3,7 +3,15 @@
   "version": "0.1.5",
   "description": "",
   "scripts": {},
-  "keywords": [],
+  "keywords": [
+    "create-web3",
+    "web3",
+    "boilerplate",
+    "nextjs",
+    "react",
+    "wagmi",
+    "hardhat"
+  ],
   "author": "Eric Roupe",
   "license": "MIT",
   "repository": {
