@@ -1,6 +1,6 @@
 {
   "name": "create-web3",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "scripts": {},
   "keywords": [],
@@ -26,5 +26,6 @@
   },
   "engines": {
     "node": ">=14"
-  }
+  },
+  "gitHead": "da4ed9ad6fa2d4386d4e35e60c221fda2bc5ccaa"
 }
