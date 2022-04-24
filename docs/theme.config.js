@@ -1,8 +1,10 @@
 // import { useTheme } from "next-themes";
 
+const github = "https://github.com/e-roy/create-web3";
+
 export default {
-  github: "https://github.com/e-roy/create-web3",
-  docsRepositoryBase: "https://github.com/e-roy/create-web3/blob/master",
+  github,
+  projectLink: github,
   titleSuffix: " – Create Web3",
   logo: (
     <>
