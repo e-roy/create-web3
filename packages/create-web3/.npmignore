@@ -13,7 +13,3 @@ deployments
 cache
 
 
-templates/default/packages/next-app/contracts/*
-
-
-templates/typescript/packages/next-app/contracts/*

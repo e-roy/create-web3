@@ -1,3 +1,5 @@
 {
-  "local-network": "Local Network"
+  "file-structure": "File Structure",
+  "local-network": "Local Network",
+  "greeter": "Greeter Contract"
 }

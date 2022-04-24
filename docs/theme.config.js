@@ -1,3 +1,5 @@
+// import { useTheme } from "next-themes";
+
 export default {
   github: "https://github.com/e-roy/create-web3",
   docsRepositoryBase: "https://github.com/e-roy/create-web3/blob/master",
@@ -5,7 +7,7 @@ export default {
   logo: (
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Create-Web3</span>
-      <span className="text-gray-600 font-normal hidden md:inline">
+      <span className="text-gray-600 dark:text-gray-200 font-normal hidden md:inline">
         A boilerplate for web3 projects
       </span>
     </>
@@ -39,8 +41,12 @@ export default {
   search: true,
   prevLinks: true,
   nextLinks: true,
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   footer: true,
   footerEditLink: "",
   footerText: <>MIT {new Date().getFullYear()} © Eric Roupe</>,
   unstable_faviconGlyph: "🧱",
+  unstable_flexsearch: true,
 };
