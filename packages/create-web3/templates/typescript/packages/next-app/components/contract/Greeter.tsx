@@ -10,8 +10,6 @@ export const Greeter = () => {
   const [currentGreeter, setCurrentGreeter] = useState('');
   const [newGreeter, setNewGreeter] = useState('');
 
-  console.log(chainId);
-
   const { data: signerData } = useSigner();
 
   const allContracts = contracts as any;

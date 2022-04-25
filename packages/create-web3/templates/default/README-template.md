@@ -25,7 +25,7 @@ This project is built with the following open source libraries, frameworks and l
 
 ## Documentation
 
-Please visit [create-web3.xyz](create-web3.xyz) to view the full documentation.
+Please visit [create-web3.xyz](https://create-web3.xyz) to view the full documentation.
 
 ## Issues
 
