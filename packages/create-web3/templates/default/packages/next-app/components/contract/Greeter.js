@@ -1,18 +1,17 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from 'react';
+import { useContract, useSigner } from 'wagmi';
 
-import { useContract, useSigner } from "wagmi";
-
-import contracts from "../../contracts/hardhat_contracts.json";
-import config from "../../config.json";
+import contracts from '../../contracts/hardhat_contracts.json';
+import { NETWORK_ID, NETWORK_NAME } from '../../config';
 
 export const Greeter = () => {
-  const [currentGreeter, setCurrentGreeter] = useState("");
-  const [newGreeter, setNewGreeter] = useState("");
+  const chainId = NETWORK_ID;
+  const network = NETWORK_NAME;
+  const [currentGreeter, setCurrentGreeter] = useState('');
+  const [newGreeter, setNewGreeter] = useState('');
 
-  const [{ data: signerData }] = useSigner();
+  const { data: signerData } = useSigner();
 
-  const chainId = Number(config.network.id);
-  const network = config.network.name;
   const greeterAddress = contracts[chainId][0].contracts.Greeter.address;
   const greeterABI = contracts[chainId][0].contracts.Greeter.abi;
 
@@ -36,13 +35,13 @@ export const Greeter = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const tx = await greeterContract.setGreeting(newGreeter);
-    setNewGreeter("");
+    setNewGreeter('');
     await tx.wait();
     fetchData();
   };
 
   return (
-    <div style={{ margin: "20px" }}>
+    <div style={{ margin: '20px' }}>
       current greeting : {currentGreeter}
       <form onSubmit={(e) => handleSubmit(e)}>
         <input

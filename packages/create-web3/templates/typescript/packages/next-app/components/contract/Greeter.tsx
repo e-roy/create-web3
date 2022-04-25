@@ -2,23 +2,26 @@ import { useEffect, useState, useCallback, FormEvent } from 'react';
 import { useContract, useSigner } from 'wagmi';
 
 import contracts from '@/contracts/hardhat_contracts.json';
-import config from '@/config.json';
+import { NETWORK_ID, NETWORK_NAME } from '@/config';
 
 export const Greeter = () => {
+  const chainId = Number(NETWORK_ID);
+  const network = NETWORK_NAME;
   const [currentGreeter, setCurrentGreeter] = useState('');
   const [newGreeter, setNewGreeter] = useState('');
 
-  const [{ data: signerData }] = useSigner();
+  console.log(chainId);
 
-  const chainId = Number(config.network.id);
-  const network = config.network.name;
-  const greeterAddress = contracts[chainId][0].contracts.Greeter.address;
-  const greeterABI = contracts[chainId][0].contracts.Greeter.abi;
+  const { data: signerData } = useSigner();
+
+  const allContracts = contracts as any;
+  const greeterAddress = allContracts[chainId][0].contracts.Greeter.address;
+  const greeterABI = allContracts[chainId][0].contracts.Greeter.abi;
 
   const greeterContract = useContract({
     addressOrName: greeterAddress,
     contractInterface: greeterABI,
-    signerOrProvider: signerData,
+    signerOrProvider: signerData || undefined,
   });
 
   const fetchData = useCallback(async () => {

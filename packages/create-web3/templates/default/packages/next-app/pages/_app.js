@@ -1,72 +1,61 @@
 import '../styles/globals.css';
 
 import * as React from 'react';
-import { providers } from 'ethers';
 import NextHead from 'next/head';
 
 // Imports
-import { Provider, chain, defaultChains } from 'wagmi';
+import { Provider, chain, createClient, defaultChains } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
 
+import { useIsMounted } from '../hooks';
+
 // Get environment variables
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID;
-const etherscanApiKey = process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY;
-const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
+// const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
 
 // Pick chains
 const chains = defaultChains;
 const defaultChain = chain.mainnet;
 
 // Set up connectors
-const connectors = ({ chainId }) => {
-  const rpcUrl =
-    chains.find((x) => x.id === chainId)?.rpcUrls?.[0] ??
-    defaultChain.rpcUrls[0];
-  return [
-    new InjectedConnector({ chains, options: { shimDisconnect: true } }),
-    new WalletConnectConnector({
-      chains,
-      options: {
-        infuraId,
-        qrcode: true,
-      },
-    }),
-    new CoinbaseWalletConnector({
-      chains,
-      options: {
-        appName: 'create-web3',
-        jsonRpcUrl: `${rpcUrl}/${infuraId}`,
-      },
-    }),
-  ];
-};
-
-// Set up providers
-const isChainSupported = (chainId) => chains.some((x) => x.id === chainId);
-
-const provider = ({ chainId }) =>
-  providers.getDefaultProvider(
-    isChainSupported(chainId) ? chainId : defaultChain.id,
-    {
-      alchemy: alchemyId,
-      infura: infuraId,
-    }
-  );
-const webSocketProvider = ({ chainId }) =>
-  isChainSupported(chainId)
-    ? new providers.InfuraWebSocketProvider(chainId, infuraId)
-    : undefined;
+const client = createClient({
+  autoConnect: true,
+  connectors({ chainId }) {
+    const chain = chains.find((x) => x.id === chainId) ?? defaultChain;
+    const rpcUrl = chain.rpcUrls.alchemy
+      ? `${chain.rpcUrls.alchemy}/${alchemyId}`
+      : typeof chain.rpcUrls.default === 'string'
+      ? chain.rpcUrls.default
+      : chain.rpcUrls.default[0];
+    return [
+      new InjectedConnector(),
+      new CoinbaseWalletConnector({
+        options: {
+          appName: 'create-web3',
+          chainId: chain.id,
+          jsonRpcUrl: rpcUrl,
+        },
+      }),
+      new WalletConnectConnector({
+        options: {
+          qrcode: true,
+          rpc: {
+            [chain.id]: rpcUrl,
+          },
+        },
+      }),
+    ];
+  },
+});
 
 const App = ({ Component, pageProps }) => {
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
   return (
-    <Provider
-      autoConnect
-      connectors={connectors}
-      provider={provider}
-      webSocketProvider={webSocketProvider}
-    >
+    <Provider client={client}>
       <NextHead>
         <title>create-web3</title>
       </NextHead>

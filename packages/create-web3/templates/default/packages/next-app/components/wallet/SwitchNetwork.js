@@ -1,19 +1,17 @@
 import { useNetwork } from 'wagmi';
-import config from '../../config.json';
+import { NETWORK_ID, NETWORK_NAME } from '../../config';
 
 export const SwitchNetwork = () => {
-  const [{ data: networkData }, switchNetwork] = useNetwork();
+  const { activeChain, switchNetwork } = useNetwork();
 
-  if (!networkData.chain?.id) return null;
+  if (!activeChain) return null;
   return (
     <div>
-      <div>
-        {config.network.id !== networkData.chain.id && (
-          <button onClick={() => switchNetwork(config.network.id)} className="">
-            please connect to {config.network.name}
-          </button>
-        )}
-      </div>
+      {NETWORK_ID !== activeChain.id && (
+        <button onClick={() => switchNetwork(NETWORK_ID)} className="">
+          please connect to {NETWORK_NAME}
+        </button>
+      )}
     </div>
   );
 };

@@ -1,35 +1,39 @@
-import * as React from "react";
-import { useConnect } from "wagmi";
+import * as React from 'react';
+import { useAccount, useConnect } from 'wagmi';
 
-import { useIsMounted } from "../../hooks";
+import { useIsMounted } from '../../hooks';
 
 export const Connect = () => {
   const isMounted = useIsMounted();
-  const [
-    {
-      data: { connector, connectors },
-      error,
-      loading,
-    },
-    connect,
-  ] = useConnect();
+
+  const { activeConnector, connectors, error, connectAsync } = useConnect();
+  const { data: accountData } = useAccount();
+
+  const onConnect = async (x) => {
+    await connectAsync(x);
+  };
 
   return (
     <div>
-      <div>
-        {connectors.map((x) => (
-          <button
-            disabled={isMounted && !x.ready}
-            key={x.name}
-            onClick={() => connect(x)}
-          >
-            {x.id === "injected" ? (isMounted ? x.name : x.id) : x.name}
-            {isMounted && !x.ready && " (unsupported)"}
-            {loading && x.name === connector?.name && "…"}
-          </button>
-        ))}
-      </div>
-      <div>{error && (error?.message ?? "Failed to connect")}</div>
+      {!activeConnector && (
+        <>
+          {connectors.map((x, index) => (
+            <button
+              disabled={
+                isMounted
+                  ? !x.ready || x.id === accountData?.connector?.id
+                  : false
+              }
+              key={index}
+              onClick={() => onConnect(x)}
+            >
+              {x.name && isMounted ? x.name : null}
+            </button>
+          ))}
+        </>
+      )}
+
+      <div> {error && <div>{error.message}</div>}</div>
     </div>
   );
 };
