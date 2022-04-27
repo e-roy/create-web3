@@ -9,6 +9,7 @@ export const Greeter = () => {
   const [currentGreeter, setCurrentGreeter] = useState('');
   const [newGreeter, setNewGreeter] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   const { data: signerData } = useSigner();
 
@@ -22,8 +23,13 @@ export const Greeter = () => {
   });
 
   const fetchData = useCallback(async () => {
-    const greeter = await greeterContract.greet();
-    setCurrentGreeter(greeter);
+    try {
+      const greeter = await greeterContract.greet();
+      setCurrentGreeter(greeter);
+      setError('');
+    } catch (error) {
+      setError("Contract couldn't be fetched");
+    }
     setLoading(false);
   }, [greeterContract]);
 
@@ -44,6 +50,10 @@ export const Greeter = () => {
 
   if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (
