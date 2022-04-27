@@ -12,10 +12,18 @@ coverage
 coverage.json
 typechain
 
+# Hardhat files
+
+cache
+artifacts
+/packages/hardhat/node_modules
+/packages/hardhat/deployments/\*
+
 # next.js
 
-/.next/
+packages/next-app/.next/
 /out/
+/packages/next-app/node_modules
 
 # production
 
@@ -43,8 +51,3 @@ yarn-error.log\*
 # vercel
 
 .vercel
-
-# Hardhat files
-
-cache
-artifacts

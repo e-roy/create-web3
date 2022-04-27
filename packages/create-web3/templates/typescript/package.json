@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "yarn workspace @project/next-app-ts dev",
-    "build": "yarn workspace @project/next-ts build",
-    "test": "yarn workspace @project/next-ts start",
+    "build": "yarn workspace @project/next-app-ts build",
+    "test": "yarn workspace @project/next-app-ts start",
     "chain": "yarn workspace @project/hardhat-ts chain",
     "clean": "yarn workspace @project/hardhat-ts clean",
     "deploy": "yarn workspace @project/hardhat-ts deploy"

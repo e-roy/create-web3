@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { AppProps } from 'next/app';
 import NextHead from 'next/head';
+import '../styles/globals.css';
 
 // Imports
 import { Provider, chain, createClient, defaultChains } from 'wagmi';
@@ -12,8 +13,7 @@ import { useIsMounted } from '../hooks';
 
 // Get environment variables
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID as string;
-const etherscanApiKey = process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY as string;
-const infuraId = process.env.NEXT_PUBLIC_INFURA_ID as string;
+// const infuraId = process.env.NEXT_PUBLIC_INFURA_ID as string;
 
 // Pick chains
 const chains = defaultChains;

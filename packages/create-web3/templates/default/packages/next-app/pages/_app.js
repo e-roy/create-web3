@@ -1,7 +1,6 @@
-import '../styles/globals.css';
-
 import * as React from 'react';
 import NextHead from 'next/head';
+import '../styles/globals.css';
 
 // Imports
 import { Provider, chain, createClient, defaultChains } from 'wagmi';

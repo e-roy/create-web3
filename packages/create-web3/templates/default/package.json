@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "yarn workspace @project/next-app dev",
-    "build": "yarn workspace @project/next build",
-    "test": "yarn workspace @project/next start",
+    "build": "yarn workspace @project/next-app build",
+    "test": "yarn workspace @project/next-app start",
     "chain": "yarn workspace @project/hardhat chain",
     "clean": "yarn workspace @project/hardhat clean",
     "deploy": "yarn workspace @project/hardhat deploy"

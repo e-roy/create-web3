@@ -127,6 +127,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
     rename: (name) => {
       switch (name) {
         case 'gitignore':
+        case 'env.example':
         case 'eslintrc.json': {
           return '.'.concat(name);
         }

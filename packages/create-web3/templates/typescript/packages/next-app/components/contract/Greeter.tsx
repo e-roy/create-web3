@@ -2,13 +2,13 @@ import { useEffect, useState, useCallback, FormEvent } from 'react';
 import { useContract, useSigner } from 'wagmi';
 
 import contracts from '@/contracts/hardhat_contracts.json';
-import { NETWORK_ID, NETWORK_NAME } from '@/config';
+import { NETWORK_ID } from '@/config';
 
 export const Greeter = () => {
   const chainId = Number(NETWORK_ID);
-  const network = NETWORK_NAME;
   const [currentGreeter, setCurrentGreeter] = useState('');
   const [newGreeter, setNewGreeter] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const { data: signerData } = useSigner();
 
@@ -25,6 +25,7 @@ export const Greeter = () => {
   const fetchData = useCallback(async () => {
     const greeter = await greeterContract.greet();
     setCurrentGreeter(greeter);
+    setLoading(false);
   }, [greeterContract]);
 
   useEffect(() => {
@@ -35,11 +36,16 @@ export const Greeter = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     const tx = await greeterContract.setGreeting(newGreeter);
     setNewGreeter('');
     await tx.wait();
     fetchData();
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div style={{ margin: '20px' }}>
