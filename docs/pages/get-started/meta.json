@@ -1,5 +1,6 @@
 {
   "quick-start": "Quick Start",
   "environment": "Environment Variables",
-  "installing-packages": "Installing Packages"
+  "installing-packages": "Installing Packages",
+  "deploy-contracts": "Deploying Contracts"
 }

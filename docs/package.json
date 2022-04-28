@@ -16,8 +16,8 @@
     "next-themes": "0.2.0-beta.0",
     "nextra": "2.0.0-alpha.44",
     "nextra-theme-docs": "2.0.0-alpha.44",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "gitHead": "da4ed9ad6fa2d4386d4e35e60c221fda2bc5ccaa",
   "devDependencies": {

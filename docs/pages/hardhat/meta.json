@@ -1,5 +1,6 @@
 {
   "file-structure": "File Structure",
   "local-network": "Local Network",
-  "greeter": "Greeter Contract"
+  "greeter": "Greeter Contract",
+  "errors": "Common Errors"
 }
