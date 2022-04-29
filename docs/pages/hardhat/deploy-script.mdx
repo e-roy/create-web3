@@ -19,6 +19,19 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 module.exports.tags = ["Greeter"];
 ```
 
+The const deployer is targeting the `hardhat.config.js` and looking at the deployer in the namedAccounts
+
+```jsx
+namedAccounts: {
+  deployer: {
+    default: 0, // here this will by default take the first account as deployer
+  },
+  tokenOwner: 1,
+},
+```
+
+deployer.default is set to 0 meaning the Account #0 in your local hardhat network when you run `chain`
+
 The args array passes arguments into the the Greeter.sol contract's constructor.
 
 ```jsx
@@ -38,3 +51,30 @@ to "Hello!!!!!!!!"
 To deploy another contract, create another file incrementing the filename ie `01_deploy_another_contract`
 
 When you run the deploy script, each deploy script will run async from lowest number to highest. This gives the advantage to deploy multiple contracts and using a previous deployed contact's address in a script to pass into another contract.
+
+So in this example if you wanted to get the contract address from the Greeter contract you could use
+
+```jsx
+const greeterAddress = await deployments.get("Greeter");
+```
+
+And then pass greeterAddress into the args like so
+
+```jsx
+module.exports = async ({ getNamedAccounts, deployments }) => {
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
+
+  const greeterAddress = await deployments.get("Greeter");
+
+  const args = [greeterAddress];
+
+  await deploy("Another", {
+    // Learn more about args here: https://www.npmjs.com/package/hardhat-deploy#deploymentsdeploy
+    args: args,
+    from: deployer,
+    log: true,
+  });
+};
+module.exports.tags = ["Another"];
+```
