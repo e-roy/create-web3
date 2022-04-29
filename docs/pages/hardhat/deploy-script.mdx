@@ -1,0 +1,40 @@
+# Deploy Script
+
+Inside the hardhat/deploy folder are where deploy scripts are run from. As you see, there is a script called `00_deploy_contract.js`
+
+```jsx
+module.exports = async ({ getNamedAccounts, deployments }) => {
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
+
+  const args = ["Hello!!!!!!!!"];
+
+  await deploy("Greeter", {
+    // Learn more about args here: https://www.npmjs.com/package/hardhat-deploy#deploymentsdeploy
+    args: args,
+    from: deployer,
+    log: true,
+  });
+};
+module.exports.tags = ["Greeter"];
+```
+
+The args array passes arguments into the the Greeter.sol contract's constructor.
+
+```jsx
+constructor(string memory _greeting) {
+    greeting = _greeting;
+}
+```
+
+This constructor takes a single string arugment. Passing ["Hello!!!!!!!!"], sets the
+
+```jsx
+string private greeting;
+```
+
+to "Hello!!!!!!!!"
+
+To deploy another contract, create another file incrementing the filename ie `01_deploy_another_contract`
+
+When you run the deploy script, each deploy script will run async from lowest number to highest. This gives the advantage to deploy multiple contracts and using a previous deployed contact's address in a script to pass into another contract.

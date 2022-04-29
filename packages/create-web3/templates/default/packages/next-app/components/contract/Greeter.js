@@ -41,11 +41,16 @@ export const Greeter = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    const tx = await greeterContract.setGreeting(newGreeter);
-    setNewGreeter('');
-    await tx.wait();
-    fetchData();
+    try {
+      setLoading(true);
+      const tx = await greeterContract.setGreeting(newGreeter);
+      setNewGreeter('');
+      await tx.wait();
+      fetchData();
+    } catch (error) {
+      setError('txn failed, check contract');
+      setLoading(false);
+    }
   };
 
   if (loading) {

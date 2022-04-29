@@ -42,11 +42,16 @@ export const Greeter = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    const tx = await greeterContract.setGreeting(newGreeter);
-    setNewGreeter('');
-    await tx.wait();
-    fetchData();
+    try {
+      setLoading(true);
+      const tx = await greeterContract.setGreeting(newGreeter);
+      await tx.wait();
+      setNewGreeter('');
+      fetchData();
+    } catch (error) {
+      setError('txn failed, check contract');
+      setLoading(false);
+    }
   };
 
   if (loading) {
