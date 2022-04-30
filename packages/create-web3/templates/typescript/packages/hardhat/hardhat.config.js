@@ -2,6 +2,7 @@ require('@nomiclabs/hardhat-waffle');
 require('dotenv').config({ path: '../../.env' });
 
 require('hardhat-deploy');
+require('@nomiclabs/hardhat-ethers');
 
 const defaultNetwork = 'localhost';
 
@@ -13,7 +14,7 @@ module.exports = {
   defaultNetwork,
 
   networks: {
-    hardhat: {
+    localhost: {
       chainId: 31337,
     },
 

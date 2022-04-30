@@ -58,7 +58,9 @@ So in this example if you wanted to get the contract address from the Greeter co
 const greeterAddress = await deployments.get("Greeter");
 ```
 
-And then pass greeterAddress into the args like so
+To get the contract data.
+
+And then pass greeterAddress.address into the args like so
 
 ```jsx
 module.exports = async ({ getNamedAccounts, deployments }) => {
@@ -67,7 +69,28 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   const greeterAddress = await deployments.get("Greeter");
 
-  const args = [greeterAddress];
+  const args = [greeterAddress.address];
+
+  await deploy("Another", {
+    // Learn more about args here: https://www.npmjs.com/package/hardhat-deploy#deploymentsdeploy
+    args: args,
+    from: deployer,
+    log: true,
+  });
+};
+module.exports.tags = ["Another"];
+```
+
+You can also create an instance of the previous contract to get the address with ethers.
+
+```jsx
+module.exports = async ({ getNamedAccounts, deployments }) => {
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
+
+  const greeter = await ethers.getContract("Greeter");
+
+  const args = [greeter.address];
 
   await deploy("Another", {
     // Learn more about args here: https://www.npmjs.com/package/hardhat-deploy#deploymentsdeploy
