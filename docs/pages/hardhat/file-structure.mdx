@@ -24,10 +24,24 @@
 
 ### Contracts folder
 
+Store solidity contracts here.
+
 ### Deploy folder
 
-The deploy folder is expected to contains the deploy script that are executed upon invocation of hardhat deploy or hardhat node. It can also be an array of folder path.
+The deploy folder is expected to contains the deploy script that are executed upon invocation of hardhat deploy or hardhat node.
+
+Each file is run async depending on it's name. So using a naming convention like:
+
+```jsx
+00_deploy_greeter.js;
+01_deploy_basic_nft.js;
+02_deploy_dynamic_svg_nft.js;
+03_deploy_random_ipfs_nft.js;
+04_mint.js;
+```
+
+will run each file in this order.
 
 ### Deployments folder
 
-The deployments folder will contains the resulting deployments (contract addresses along their abi, bytecode, metadata...). One folder per network and one file per contract.
+The deployments folder will contain the resulting deployments (contract addresses along their abi, bytecode, metadata...). One folder per network and one file per contract.
