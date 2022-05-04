@@ -16,7 +16,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
   });
 };
-module.exports.tags = ["Greeter"];
+module.exports.tags = ["all", "greeter"];
 ```
 
 The const deployer is targeting the `hardhat.config.js` and looking at the deployer in the namedAccounts
@@ -50,6 +50,16 @@ to "Hello!!!!!!!!"
 
 To deploy another contract, create another file incrementing the filename ie `01_deploy_another_contract`
 
+For deploying contracts, tags help target contracts you'd like to deploy. So in the `00_deploy_contract.js` file:
+
+```jsx
+module.exports.tags = ["all", "greeter"];
+```
+
+The 'all' tag will call this script for when using `yarn deploy`.
+
+To target just this contract to deploy, use the flag greeter `yarn deploy --tags greeter`
+
 When you run the deploy script, each deploy script will run async from lowest number to highest. This gives the advantage to deploy multiple contracts and using a previous deployed contact's address in a script to pass into another contract.
 
 So in this example if you wanted to get the contract address from the Greeter contract you could use
@@ -78,7 +88,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
   });
 };
-module.exports.tags = ["Another"];
+module.exports.tags = ["all", "another"];
 ```
 
 You can also create an instance of the previous contract to get the address with ethers.
@@ -99,5 +109,5 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
   });
 };
-module.exports.tags = ["Another"];
+module.exports.tags = ["all", "another"];
 ```

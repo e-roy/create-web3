@@ -10,7 +10,8 @@
     "test": "yarn workspace @project/next-app-ts start",
     "chain": "yarn workspace @project/hardhat-ts chain",
     "clean": "yarn workspace @project/hardhat-ts clean",
-    "deploy": "yarn workspace @project/hardhat-ts deploy"
+    "deploy": "yarn workspace @project/hardhat-ts deploy",
+    "compile": "yarn workspace @project/hardhat-ts compile"
   },
   "author": "",
   "workspaces": {

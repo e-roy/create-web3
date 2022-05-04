@@ -12,4 +12,4 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
   });
 };
-module.exports.tags = ['Greeter'];
+module.exports.tags = ['all', 'greeter'];

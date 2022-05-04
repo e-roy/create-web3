@@ -10,7 +10,8 @@
     "test": "yarn workspace @project/next-app start",
     "chain": "yarn workspace @project/hardhat chain",
     "clean": "yarn workspace @project/hardhat clean",
-    "deploy": "yarn workspace @project/hardhat deploy"
+    "deploy": "yarn workspace @project/hardhat deploy",
+    "compile": "yarn workspace @project/hardhat compile"
   },
   "author": "",
   "license": "ISC",
