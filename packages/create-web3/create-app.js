@@ -131,8 +131,6 @@ const init = async ({ appPath, useNpm, typescript }) => {
         case 'eslintrc.json': {
           return '.'.concat(name);
         }
-        // README.md is ignored by webpack-asset-relocator-loader used by ncc:
-        // https://github.com/vercel/webpack-asset-relocator-loader/blob/e9308683d47ff507253e37c9bcbb99474603192b/src/asset-relocator.js#L227
         case 'README-template.md': {
           return 'README.md';
         }
@@ -156,29 +154,32 @@ const init = async ({ appPath, useNpm, typescript }) => {
   }
 
   console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
-  console.log('Inside that directory, you can run several commands:');
-  console.log();
-  console.log();
-  console.log('Suggest that you begin by, creating 3 terminals.');
-  console.log();
-  console.log('In one terminal type:');
-  console.log(chalk.cyan('  cd'), cdpath);
-  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'install '}`));
   console.log(
-    `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}chain`)}`
+    `For a walk through guild, visit https://www.create-web3.xyz/get-started/quick-start`
   );
-  console.log();
-  console.log('In a second terminal type:');
-  console.log(chalk.cyan('  cd'), cdpath);
-  console.log(
-    `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}deploy`)}`
-  );
-  console.log();
-  console.log('In a third terminal type:');
-  console.log(chalk.cyan('  cd'), cdpath);
-  console.log(
-    `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}dev`)}`
-  );
+  // console.log('Inside that directory, you can run several commands:');
+  // console.log();
+  // console.log();
+  // console.log('Suggest that you begin by, creating 3 terminals.');
+  // console.log();
+  // console.log('In one terminal type:');
+  // console.log(chalk.cyan('  cd'), cdpath);
+  // console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'install '}`));
+  // console.log(
+  //   `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}chain`)}`
+  // );
+  // console.log();
+  // console.log('In a second terminal type:');
+  // console.log(chalk.cyan('  cd'), cdpath);
+  // console.log(
+  //   `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}deploy`)}`
+  // );
+  // console.log();
+  // console.log('In a third terminal type:');
+  // console.log(chalk.cyan('  cd'), cdpath);
+  // console.log(
+  //   `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}dev`)}`
+  // );
   console.log();
 };
 
