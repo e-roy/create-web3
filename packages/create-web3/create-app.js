@@ -154,6 +154,13 @@ const init = async ({ appPath, useNpm, typescript }) => {
   }
 
   console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
+  console.log();
+  console.log(
+    'Get started by going into the directory and install dependencies.'
+  );
+  console.log(chalk.cyan('  cd'), cdpath);
+  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'install '}`));
+  console.log();
   console.log(
     `For a walk through guild, visit https://www.create-web3.xyz/get-started/quick-start`
   );
