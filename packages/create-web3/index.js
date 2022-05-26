@@ -122,11 +122,12 @@ async function notifyUpdate() {
       );
       console.log(
         'You can update by running: ' +
-          chalk.cyan(
-            pkgManager === 'yarn'
-              ? 'yarn global add create-web3'
-              : `${pkgManager} install --global create-web3`
-          )
+          chalk.cyan(`npm install --global create-web3`)
+        // chalk.cyan(
+        //   pkgManager === 'yarn'
+        //     ? 'yarn global add create-web3'
+        //     : `${pkgManager} install --global create-web3`
+        // )
       );
       console.log();
     } else {
