@@ -22,6 +22,7 @@ This project is built with the following open source libraries, frameworks and l
 | [Hardhat](https://hardhat.org/) | Ethereum development environment |
 | [hardhat-deploy](https://www.npmjs.com/package/hardhat-deploy) | A Hardhat Plugin For Replicable Deployments And Easy Testing |
 | [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
+| [RainbowKit](https://www.rainbowkit.com/docs/introduction) | RainbowKit is a React library that makes it easy to add wallet connection to your dapp. |
 
 ## Documentation
 

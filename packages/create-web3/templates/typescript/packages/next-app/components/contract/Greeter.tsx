@@ -29,7 +29,7 @@ export const Greeter = () => {
       setCurrentGreeter(greeter);
       setError('');
     } catch (error) {
-      setError("Contract couldn't be fetched");
+      setError("Contract couldn't be fetched.  Please check your network.");
     }
     setLoading(false);
   }, [greeterContract]);

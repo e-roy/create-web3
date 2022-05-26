@@ -1,16 +1,9 @@
 import Head from 'next/head';
-import { useConnect } from 'wagmi';
 
-import { Connect, Disconnect, SwitchNetwork } from '../components/wallet';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Greeter } from '../components/contract/Greeter';
 
-import { useNetwork } from 'wagmi';
-import { NETWORK_ID } from '../config';
-
 export default function Home() {
-  const { activeChain } = useNetwork();
-  const { activeConnector } = useConnect();
-
   return (
     <div className={''}>
       <Head>
@@ -19,9 +12,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <header style={{ padding: '1rem' }}>
+        <ConnectButton />
+      </header>
+
       <main
         style={{
-          minHeight: '100vh',
+          minHeight: '60vh',
           flex: '1',
           display: 'flex',
           flexDirection: 'column',
@@ -29,20 +26,7 @@ export default function Home() {
           alignItems: 'center',
         }}
       >
-        {/* Check if the wallet is connected to the network */}
-        {!activeConnector ? (
-          <Connect />
-        ) : (
-          <>
-            <Disconnect />
-            {/* Check if connected to correct network */}
-            {activeChain && NETWORK_ID !== activeChain.id ? (
-              <SwitchNetwork />
-            ) : (
-              <Greeter />
-            )}
-          </>
-        )}
+        <Greeter />
       </main>
     </div>
   );
