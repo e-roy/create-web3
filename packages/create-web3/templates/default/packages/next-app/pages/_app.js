@@ -3,10 +3,12 @@ import NextHead from 'next/head';
 import '../styles/globals.css';
 
 // Imports
-import { Provider, chain, createClient, defaultChains } from 'wagmi';
-import { InjectedConnector } from 'wagmi/connectors/injected';
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
+import { chain, createClient, WagmiConfig, configureChains } from 'wagmi';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+
+import '@rainbow-me/rainbowkit/styles.css';
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 import { useIsMounted } from '../hooks';
 
@@ -14,39 +16,35 @@ import { useIsMounted } from '../hooks';
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID;
 // const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
 
-// Pick chains
-const chains = defaultChains;
-const defaultChain = chain.mainnet;
-
-// Set up connectors
-const client = createClient({
-  autoConnect: true,
-  connectors({ chainId }) {
-    const chain = chains.find((x) => x.id === chainId) ?? defaultChain;
-    const rpcUrl = chain.rpcUrls.alchemy
-      ? `${chain.rpcUrls.alchemy}/${alchemyId}`
-      : typeof chain.rpcUrls.default === 'string'
-      ? chain.rpcUrls.default
-      : chain.rpcUrls.default[0];
-    return [
-      new InjectedConnector(),
-      new CoinbaseWalletConnector({
-        options: {
-          appName: 'create-web3',
-          chainId: chain.id,
-          jsonRpcUrl: rpcUrl,
-        },
-      }),
-      new WalletConnectConnector({
-        options: {
-          qrcode: true,
-          rpc: {
-            [chain.id]: rpcUrl,
-          },
-        },
-      }),
-    ];
+const hardhatChain = {
+  id: 31337,
+  name: 'Hardhat',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Hardhat',
+    symbol: 'HARD',
   },
+  network: 'hardhat',
+  rpcUrls: {
+    default: 'http://127.0.0.1:8545',
+  },
+  testnet: true,
+};
+
+const { chains, provider } = configureChains(
+  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, hardhatChain],
+  [alchemyProvider({ alchemyId }), publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: 'Create-Web3',
+  chains,
+});
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors,
+  provider,
 });
 
 const App = ({ Component, pageProps }) => {
@@ -54,13 +52,14 @@ const App = ({ Component, pageProps }) => {
 
   if (!isMounted) return null;
   return (
-    <Provider client={client}>
-      <NextHead>
-        <title>create-web3</title>
-      </NextHead>
-
-      <Component {...pageProps} />
-    </Provider>
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider coolMode chains={chains}>
+        <NextHead>
+          <title>create-web3</title>
+        </NextHead>
+        <Component {...pageProps} />
+      </RainbowKitProvider>
+    </WagmiConfig>
   );
 };
 
