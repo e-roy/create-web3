@@ -10,7 +10,9 @@
     "nextjs",
     "react",
     "wagmi",
-    "hardhat"
+    "hardhat",
+    "rainbowkit",
+    "dapp"
   ],
   "author": "Eric Roupe",
   "license": "MIT",

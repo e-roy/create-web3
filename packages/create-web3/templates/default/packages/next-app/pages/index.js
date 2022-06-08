@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { Greeter } from '../components/contract/Greeter';
+import { GetGreeter, SetGreeter } from '../components/contract';
 
 export default function Home() {
   return (
@@ -26,7 +26,8 @@ export default function Home() {
           alignItems: 'center',
         }}
       >
-        <Greeter />
+        <GetGreeter />
+        <SetGreeter />
       </main>
     </div>
   );
