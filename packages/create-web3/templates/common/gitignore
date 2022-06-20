@@ -16,8 +16,13 @@ typechain
 
 cache
 artifacts
-/packages/hardhat/node_modules
-/packages/hardhat/deployments/\*
+/packages/backend/node_modules
+/packages/backend/deployments/\*
+
+# Foundry files
+
+/packages/backend/cache
+/packages/backend/out
 
 # next.js
 
