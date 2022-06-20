@@ -1,0 +1,52 @@
+{
+  "31337": [
+    {
+      "name": "localhost",
+      "chainId": "31337",
+      "contracts": {
+        "Greeter": {
+          "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "string",
+                  "name": "_greeting",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "constructor"
+            },
+            {
+              "inputs": [],
+              "name": "greet",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "string",
+                  "name": "_greeting",
+                  "type": "string"
+                }
+              ],
+              "name": "setGreeting",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -13,8 +13,8 @@ const gitInit = require('./helpers/git');
 const installNext = require('./helpers/install-next');
 const installHardhat = require('./helpers/install-hardhat');
 
-const init = async ({ appPath, useNpm, typescript }) => {
-  console.log('running create app');
+const init = async ({ appPath, useNpm, typescript, frontend, backend }) => {
+  console.log('running create-web3');
   console.log(`appPath: ${appPath}`);
   console.log(`useNpm: ${useNpm}`);
   // console.log(typescript);
@@ -40,8 +40,8 @@ const init = async ({ appPath, useNpm, typescript }) => {
   }
 
   await makeDir.makeDir(path.join(root, 'packages'));
-  await makeDir.makeDir(path.join(root, 'packages', 'next-app'));
-  await makeDir.makeDir(path.join(root, 'packages', 'hardhat'));
+  await makeDir.makeDir(path.join(root, 'packages', 'frontend'));
+  await makeDir.makeDir(path.join(root, 'packages', 'backend'));
 
   // const useYarn = useNpm ? false : checkYarn.shouldUseYarn();
   const useYarn = useNpm ? false : true;
@@ -59,39 +59,56 @@ const init = async ({ appPath, useNpm, typescript }) => {
   /**
    * Create a package.json for the new project.
    */
+
+  const nextScripts = {
+    dev: 'yarn workspace @create-web3/frontend dev',
+    build: 'yarn workspace @create-web3/frontend build',
+    start: 'yarn workspace @create-web3/frontend start',
+    lint: 'yarn workspace @create-web3/frontend lint',
+  };
+
+  const viteScripts = {
+    dev: 'yarn workspace @create-web3/frontend dev',
+    build: 'yarn workspace @create-web3/frontend build',
+    serve: 'yarn workspace @create-web3/frontend serve',
+  };
+
+  const hardhatScripts = {
+    chain: 'yarn workspace @create-web3/backend chain',
+    compile: 'yarn workspace @create-web3/backend compile',
+    clean: 'yarn workspace @create-web3/backend clean',
+    deploy: 'yarn workspace @create-web3/backend deploy',
+  };
+
+  const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;
+
   const packageJson = {
-    name: 'create-web3',
+    name: appName,
     version: '0.0.1',
-    description: 'mono repo with hardhat and next',
+    description: `create-web3 monorepo quickstart with ${frontend} and ${backend}`,
     main: 'index.js',
     private: true,
     scripts: {
-      dev: 'yarn workspace @project/next-app dev',
-      build: 'yarn workspace @project/next build',
-      test: 'yarn workspace @project/next start',
-      chain: 'yarn workspace @project/hardhat chain',
-      clean: 'yarn workspace @project/hardhat clean',
-      deploy: 'yarn workspace @project/hardhat deploy',
+      ...frontendScripts,
+      ...hardhatScripts,
     },
     workspaces: {
       packages: ['packages/*'],
       nohoist: [
         '**/@graphprotocol/graph-ts',
         '**/@graphprotocol/graph-ts/**',
-        '**/hardhat',
-        '**/hardhat/**',
-        '**/hardhat-ts',
-        '**/hardhat-ts/**',
+        '**/backend',
+        '**/backend/**',
       ],
     },
   };
   /**
    * Write it to disk.
    */
-  // fs.writeFileSync(
-  //   path.join(root, 'package.json'),
-  //   JSON.stringify(packageJson, null, 2) + os.EOL
-  // );
+  fs.writeFileSync(
+    path.join(root, 'package.json'),
+    JSON.stringify(packageJson, null, 2) + os.EOL
+  );
 
   /**
    * These flags will be passed to `install()`.
@@ -111,19 +128,7 @@ const init = async ({ appPath, useNpm, typescript }) => {
    * Copy the template files to the target directory.
    */
   await cpy('**', root, {
-    parents: true,
-    cwd: path.join(__dirname, 'templates', template), //for seperate templated folders
-    // cwd: path.join(__dirname, 'template'), //for single template
-    filter: (name) => {
-      // console.log('file name : ', name);
-      if (
-        name.relativePath === './packages/hardhat/package.json' ||
-        name.relativePath === './packages/next-app/package.json'
-      ) {
-        return false;
-      }
-      return true;
-    },
+    cwd: path.join(__dirname, 'templates', 'common'),
     rename: (name) => {
       switch (name) {
         case 'gitignore':
@@ -133,6 +138,52 @@ const init = async ({ appPath, useNpm, typescript }) => {
         }
         case 'README-template.md': {
           return 'README.md';
+        }
+        default: {
+          return name;
+        }
+      }
+    },
+  });
+
+  const backendpath = backend === 'hardhat' ? `hardhat/${template}` : 'foundry';
+
+  await cpy('**', root + '/packages/backend/', {
+    parents: true,
+    // cwd: path.join(__dirname, "templates", "hardhat", template),
+    cwd: path.join(__dirname, 'templates', backendpath),
+
+    filter: (name) => {
+      if (name.relativePath === 'package.json') {
+        return false;
+      }
+      return true;
+    },
+    rename: (name) => {
+      switch (name) {
+        case 'package-template.json': {
+          return 'package.json';
+        }
+        default: {
+          return name;
+        }
+      }
+    },
+  });
+
+  await cpy('**', root + '/packages/frontend/', {
+    parents: true,
+    cwd: path.join(__dirname, 'templates', frontend, template),
+    filter: (name) => {
+      if (name.relativePath === 'package.json') {
+        return false;
+      }
+      return true;
+    },
+    rename: (name) => {
+      switch (name) {
+        case 'package-template.json': {
+          return 'package.json';
         }
         default: {
           return name;

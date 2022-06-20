@@ -42,7 +42,7 @@ async function run() {
     const resName = await prompts({
       type: 'text',
       name: 'path',
-      message: 'What is your Web3 app named?',
+      message: 'What is your web3 app named?',
       initial: 'my-app',
       validate: (name) => {
         const validation = validated.validateNpmName(
@@ -60,6 +60,26 @@ async function run() {
       projectPath = resName.path.trim();
     }
   }
+
+  const resFrontend = await prompts({
+    type: 'select',
+    name: 'frontend',
+    message: 'Frontend : React w/ Next or Vite?',
+    choices: [
+      { title: 'Next', value: 'next' },
+      { title: 'Vite', value: 'vite' },
+    ],
+  });
+
+  const resBackend = await prompts({
+    type: 'select',
+    name: 'backend',
+    message: 'Backend : Hardhat or Foundry?',
+    choices: [
+      { title: 'Hardhat', value: 'hardhat' },
+      { title: 'Foundry - currently testing', value: 'foundry' },
+    ],
+  });
 
   const resTypescript = await prompts({
     type: 'select',
@@ -101,6 +121,8 @@ async function run() {
       appPath: resolvedProjectPath,
       useNpm: resUseNpm.useNpm,
       typescript: resTypescript.typescript,
+      frontend: resFrontend.frontend,
+      backend: resBackend.backend,
     });
   } catch (error) {
     console.log(error);
@@ -115,6 +137,7 @@ async function notifyUpdate() {
     const res = await update;
     if (res?.latest) {
       const pkgManager = getPkgManager();
+      console.log('pkgManager', pkgManager);
 
       console.log();
       console.log(
