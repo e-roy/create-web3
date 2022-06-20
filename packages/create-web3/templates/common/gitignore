@@ -26,9 +26,14 @@ artifacts
 
 # next.js
 
-packages/next-app/.next/
+/packages/frontend/node_modules
+packages/frontend/.next/
 /out/
-/packages/next-app/node_modules
+
+# vite
+
+/packages/frontend/node_modules
+/packages/frontend/dist
 
 # production
 
