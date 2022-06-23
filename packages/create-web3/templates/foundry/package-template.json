@@ -1,0 +1,13 @@
+{
+  "name": "@create-web3/backend",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "chain": "anvil",
+    "compile": "forge build",
+    "test": "forge test"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

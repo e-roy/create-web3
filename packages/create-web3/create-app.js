@@ -80,7 +80,16 @@ const init = async ({ appPath, useNpm, typescript, frontend, backend }) => {
     deploy: 'yarn workspace @create-web3/backend deploy',
   };
 
+  const foundryScripts = {
+    chain: 'yarn workspace @create-web3/backend chain',
+    compile: 'yarn workspace @create-web3/backend compile',
+    test: 'yarn workspace @create-web3/backend test',
+    clean: 'yarn workspace @create-web3/backend clean',
+  };
+
   const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;
+  const backendScripts =
+    backend === 'hardhat' ? hardhatScripts : foundryScripts;
 
   const packageJson = {
     name: appName,
@@ -90,7 +99,7 @@ const init = async ({ appPath, useNpm, typescript, frontend, backend }) => {
     private: true,
     scripts: {
       ...frontendScripts,
-      ...hardhatScripts,
+      ...backendScripts,
     },
     workspaces: {
       packages: ['packages/*'],
@@ -163,6 +172,9 @@ const init = async ({ appPath, useNpm, typescript, frontend, backend }) => {
       switch (name) {
         case 'package-template.json': {
           return 'package.json';
+        }
+        case 'gitmodules': {
+          return '.'.concat(name);
         }
         default: {
           return name;
