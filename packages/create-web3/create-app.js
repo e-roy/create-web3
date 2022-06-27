@@ -76,6 +76,7 @@ const init = async ({ appPath, useNpm, typescript, frontend, backend }) => {
   const hardhatScripts = {
     chain: 'yarn workspace @create-web3/backend chain',
     compile: 'yarn workspace @create-web3/backend compile',
+    test: 'yarn workspace @create-web3/backend test',
     clean: 'yarn workspace @create-web3/backend clean',
     deploy: 'yarn workspace @create-web3/backend deploy',
   };

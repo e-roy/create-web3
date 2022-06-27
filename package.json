@@ -7,9 +7,11 @@
     "web3",
     "boilerplate",
     "nextjs",
+    "vite",
     "react",
     "wagmi",
-    "hardhat"
+    "hardhat",
+    "foundry"
   ],
   "scripts": {
     "dev": "yarn workspace @create-web3/next dev",
@@ -29,11 +31,13 @@
     "chain": "yarn workspace @create-web3/hardhat chain",
     "clean": "yarn workspace @create-web3/hardhat clean",
     "deploy": "yarn workspace @create-web3/hardhat deploy",
+    "test": "yarn workspace @create-web3/hardhat test",
     "deploy:rinkeby": "yarn workspace @create-web3/hardhat deploy:rinkeby",
     "deploy:mainnet": "yarn workspace @create-web3/hardhat deploy:mainnet",
     "chain:ts": "yarn workspace @create-web3/hardhat-ts chain",
     "clean:ts": "yarn workspace @create-web3/hardhat-ts clean",
     "deploy:ts": "yarn workspace @create-web3/hardhat-ts deploy",
+    "test:ts": "yarn workspace @create-web3/hardhat-ts test",
     "chain:foundry": "yarn workspace @create-web3/foundry chain",
     "compile:foundry": "yarn workspace @create-web3/foundry compile",
     "test:foundry": "yarn workspace @create-web3/foundry test",

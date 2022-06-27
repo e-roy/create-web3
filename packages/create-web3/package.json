@@ -9,8 +9,10 @@
     "boilerplate",
     "nextjs",
     "react",
+    "vite",
     "wagmi",
     "hardhat",
+    "foundry",
     "rainbowkit",
     "dapp"
   ],
