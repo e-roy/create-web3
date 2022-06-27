@@ -1,15 +1,16 @@
-require('@nomiclabs/hardhat-waffle');
-require('dotenv').config({ path: '../../.env' });
+import '@nomiclabs/hardhat-waffle'
+import * as dotenv from 'dotenv';
+import { HardhatUserConfig } from "hardhat/config";
+import 'hardhat-deploy';
+import '@nomiclabs/hardhat-ethers';
 
-require('hardhat-deploy');
-require('@nomiclabs/hardhat-ethers');
-
+dotenv.config({ path: '../../.env' });
 const defaultNetwork = 'localhost';
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
+const config: HardhatUserConfig = {
   solidity: '0.8.10',
   defaultNetwork,
 
@@ -83,3 +84,5 @@ module.exports = {
     tokenOwner: 1,
   },
 };
+
+export default config;
