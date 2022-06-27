@@ -18,9 +18,16 @@ This boilerplate quickly creates a mono repo with 2 environments, a Next JS envi
 This project is built with the following open source libraries, frameworks and languages.
 | Tech | Description |
 | --------------------------------------------- | ------------------------------------------------------------------ |
+| ------ | ------ Pick React Framework ------ |
 | [Next.js](https://nextjs.org/) | React Framework |
+| or | |
+| [Vite JS](https://vitejs.dev/) | Next Generation Frontend Tooling |
+| ------ | ------ Pick EVM Framework ------ |
 | [Hardhat](https://hardhat.org/) | Ethereum development environment |
 | [hardhat-deploy](https://www.npmjs.com/package/hardhat-deploy) | A Hardhat Plugin For Replicable Deployments And Easy Testing |
+| or | |
+| [Foundry](https://getfoundry.sh/) | Ethereum development environment |
+| ------ | ------ |
 | [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
 | [RainbowKit](https://www.rainbowkit.com/docs/introduction) | RainbowKit is a React library that makes it easy to add wallet connection to your dapp. |
 
