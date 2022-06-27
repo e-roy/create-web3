@@ -1,6 +1,7 @@
-// deploy/00_deploy_contract
+import {HardhatRuntimeEnvironment} from 'hardhat/types';
+import {DeployFunction} from 'hardhat-deploy/types';
 
-module.exports = async ({ getNamedAccounts, deployments }) => {
+const main: DeployFunction = async function ({getNamedAccounts, deployments}: HardhatRuntimeEnvironment) {
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
 
@@ -12,4 +13,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
   });
 };
-module.exports.tags = ['all', 'greeter'];
+
+export default main;
+ 
+export const tags = ['all', 'greeter'];
