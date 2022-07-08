@@ -8,11 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rainbow-me/rainbowkit": "^0.4.0",
+    "@rainbow-me/rainbowkit": "^0.4.2",
+    "buffer": "^6.0.3",
     "ethers": "^5.6.9",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wagmi": "^0.5.4"
+    "util": "^0.12.4",
+    "wagmi": "^0.5.9"
   },
   "devDependencies": {
     "@types/react": "^18.0.14",

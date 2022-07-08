@@ -1,8 +1,25 @@
-# File Structure - Vite
+# File Structure - Vite JS
 
 ```jsx
 ├── frontend
-
+│   ├── contracts
+│   │   └── hardhat_contracts.json
+│   ├── node_modules
+│   │   └── ...
+│   ├── src
+│   │   ├── components
+│   │   |   ├── GetGreeter.jsx
+│   │   |   ├── index.js
+│   │   │   └── SetGreeter.jsx
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── config.js
+│   │   ├── favicon.svg
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
 │
 │
 ```
@@ -10,3 +27,19 @@
 ### Components folder
 
 ### Contracts folder
+
+After deploying your contract(s), a file called hardhat_contracts.json is created with a copy of each contract's address and abi to use in your dapp.
+
+An example how to import this file to use in a component:
+
+```jsx
+// import the json file
+import contracts from "../../contracts/hardhat_contracts.json";
+// get the network id the next app is currently using
+import { NETWORK_ID } from "../../config";
+
+// get the contract's address
+const contractAddress = contracts[NETWORK_ID][0].contracts.<Contract's Name>.address;
+// get the contract's abi
+const contractrABI = contracts[NETWORK_ID][0].contracts.<Contract's Name>.abi;
+```
