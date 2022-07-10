@@ -7,7 +7,8 @@
     "chain": "anvil",
     "compile": "forge build",
     "test": "forge test",
-    "clean": "forge clean"
+    "clean": "forge clean",
+    "gas": "forge test --gas-report"
   },
   "devDependencies": {},
   "dependencies": {}

@@ -1,6 +1,8 @@
-# create-web3 [![Version](https://img.shields.io/npm/v/create-web3)](https://www.npmjs.com/package/create-web3) [![Downloads](https://img.shields.io/npm/dm/create-web3)](https://www.npmjs.com/package/create-web3)
+# create-web3
 
-A boilerplate for starting a web3 project.
+## A boilerplate for starting a web3 projects
+
+[![Version](https://img.shields.io/npm/v/create-web3)](https://www.npmjs.com/package/create-web3) [![Downloads](https://img.shields.io/npm/dm/create-web3)](https://www.npmjs.com/package/create-web3)
 
 This boilerplate quickly creates a mono repo with 2 environments, a Next JS environment for front-end and a Hardhat environment for writing, testing and deploying contracts.
 

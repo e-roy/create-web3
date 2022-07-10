@@ -86,6 +86,7 @@ const init = async ({ appPath, useNpm, typescript, frontend, backend }) => {
     compile: 'yarn workspace @create-web3/backend compile',
     test: 'yarn workspace @create-web3/backend test',
     clean: 'yarn workspace @create-web3/backend clean',
+    gas: 'yarn workspace @create-web3/backend gas',
   };
 
   const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;

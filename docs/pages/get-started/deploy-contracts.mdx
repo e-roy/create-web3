@@ -1,3 +1,4 @@
+import { Code } from "../../components";
 import Bleed from "nextra-theme-docs/bleed";
 import Callout from "nextra-theme-docs/callout";
 
@@ -5,19 +6,11 @@ import Callout from "nextra-theme-docs/callout";
 
 To deploy to your local hardhat environment, first start your local environment by running
 
-```jsx
-yarn chain
-    or
-npm run chain
-```
+<Code terminal>chain</Code>
 
 and then in another terminal run
 
-```jsx
-yarn deploy
-    or
-npm run deploy
-```
+<Code terminal>deploy</Code>
 
 After every deployment, a copy of the deployment (contract address and abi) is copied to the hardhat_contracts.json file in the next-app/contracts folder
 
@@ -35,19 +28,11 @@ Be sure to add your environment varables and only uncomment the node provider yo
 
 and run:
 
-```jsx
-yarn deploy --network <network name>
-    or
-npm run deploy --network <network name>
-```
+<Code terminal>deploy --network (network name)</Code>
 
 For example to deploy to the Mumbai testnet run:
 
-```jsx
-yarn deploy --network mumbai
-    or
-npm run deploy --network mumbai
-```
+<Code terminal>deploy --network mumbai</Code>
 
 Once you deploy to a network other than hardhat, go into your config.js file inside the next-app folder and change the NETWORK_ID and NETWORK_NAME to the network your Next App will interact with.
 
