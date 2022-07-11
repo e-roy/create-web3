@@ -1,7 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+
 import App from './App';
 import './index.css';
+
+import { ChakraProvider } from '@chakra-ui/react';
 
 // Imports
 import { chain, createClient, WagmiConfig, configureChains } from 'wagmi';
@@ -50,7 +53,9 @@ createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider coolMode chains={chains}>
-        <App />
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   </React.StrictMode>

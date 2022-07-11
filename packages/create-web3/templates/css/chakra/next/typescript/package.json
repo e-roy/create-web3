@@ -1,0 +1,32 @@
+{
+  "name": "@create-web3/frontend",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.2.3",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@rainbow-me/rainbowkit": "^0.4.2",
+    "ethers": "^5.6.9",
+    "framer-motion": "^6.4.3",
+    "next": "12.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "wagmi": "^0.5.9"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.17.0",
+    "eslint-config-next": "^12.1.6",
+    "typescript": "^4.7.4"
+  }
+}

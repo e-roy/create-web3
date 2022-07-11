@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import './index.css';
 
 // Imports
-import { chain, createClient, WagmiConfig, configureChains } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
+import { chain, createClient, WagmiConfig, configureChains } from 'wagmi';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
 
-import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import '@rainbow-me/rainbowkit/styles.css';
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 // Get environment variables
 const alchemyId = import.meta.env.VITE_ALCHEMY_ID;
@@ -17,15 +17,15 @@ const alchemyId = import.meta.env.VITE_ALCHEMY_ID;
 
 const hardhatChain = {
   id: 31337,
-  name: "Hardhat",
+  name: 'Hardhat',
   nativeCurrency: {
     decimals: 18,
-    name: "Hardhat",
-    symbol: "HARD",
+    name: 'Hardhat',
+    symbol: 'HARD',
   },
-  network: "hardhat",
+  network: 'hardhat',
   rpcUrls: {
-    default: "http://127.0.0.1:8545",
+    default: 'http://127.0.0.1:8545',
   },
   testnet: true,
 };
@@ -36,7 +36,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "Create-Web3",
+  appName: 'create-web3',
   chains,
 });
 
@@ -46,7 +46,7 @@ const wagmiClient = createClient({
   provider,
 });
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider coolMode chains={chains}>

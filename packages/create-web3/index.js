@@ -71,6 +71,17 @@ async function run() {
     ],
   });
 
+  const resCSS = await prompts({
+    type: 'select',
+    name: 'css',
+    message: 'CSS Framework?',
+    choices: [
+      { title: 'None', value: null },
+      { title: 'Tailwind', value: 'tailwind' },
+      { title: 'Chakra', value: 'chakra' },
+    ],
+  });
+
   const resBackend = await prompts({
     type: 'select',
     name: 'backend',
@@ -123,6 +134,7 @@ async function run() {
       typescript: resTypescript.typescript,
       frontend: resFrontend.frontend,
       backend: resBackend.backend,
+      css: resCSS.css,
     });
   } catch (error) {
     console.log(error);

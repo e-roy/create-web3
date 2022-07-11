@@ -1,7 +1,9 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
-import './index.css';
+import * as React from 'react';
+import type { AppProps } from 'next/app';
+import NextHead from 'next/head';
+import '../styles/globals.css';
+
+import { ChakraProvider } from '@chakra-ui/react';
 
 // Imports
 import { chain, createClient, WagmiConfig, configureChains } from 'wagmi';
@@ -9,13 +11,19 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  Chain,
+} from '@rainbow-me/rainbowkit';
+
+import { useIsMounted } from '../hooks';
 
 // Get environment variables
-const alchemyId = import.meta.env.VITE_ALCHEMY_ID;
-// const infuraId = import.meta.env.VITE_INFURA_ID;
+const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID as string;
+// const infuraId = process.env.NEXT_PUBLIC_INFURA_ID as string;
 
-const hardhatChain = {
+const hardhatChain: Chain = {
   id: 31337,
   name: 'Hardhat',
   nativeCurrency: {
@@ -46,12 +54,22 @@ const wagmiClient = createClient({
   provider,
 });
 
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+const App = ({ Component, pageProps }: AppProps) => {
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
+  return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider coolMode chains={chains}>
-        <App />
+        <NextHead>
+          <title>create-web3</title>
+        </NextHead>
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>
-  </React.StrictMode>
-);
+  );
+};
+
+export default App;

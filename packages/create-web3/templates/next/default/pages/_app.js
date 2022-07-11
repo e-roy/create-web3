@@ -37,7 +37,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'Create-Web3',
+  appName: 'create-web3',
   chains,
 });
 
