@@ -1,6 +1,8 @@
 # create-web3
 
-A boilerplate for creating a web3 projects
+## A boilerplate for creating a web3 projects
+
+This boilerplate quickly creates a mono repo with 2 environments, a react frontend environment and a Ethereum development environment for writing, testing and deploying contracts.
 
 <p>
   <a href="https://www.npmjs.com/package/wagmi">
@@ -13,8 +15,6 @@ A boilerplate for creating a web3 projects
     <img src="https://img.shields.io/npm/l/create-web3" alt="License">
   </a>
 </p>
-
-This boilerplate quickly creates a mono repo with 2 environments, a react frontend environment and a Ethereum development environment for writing, testing and deploying contracts.
 
 ## Quick Start Notes
 
