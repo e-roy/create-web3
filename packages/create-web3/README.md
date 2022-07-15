@@ -1,14 +1,29 @@
 # create-web3
 
-A boilerplate for starting a web3 projects
+A boilerplate for creating a web3 projects
 
-[![Version](https://img.shields.io/npm/v/create-web3)](https://www.npmjs.com/package/create-web3) [![Downloads](https://img.shields.io/npm/dm/create-web3)](https://www.npmjs.com/package/create-web3)
+<p>
+  <a href="https://www.npmjs.com/package/wagmi">
+    <img src="https://img.shields.io/npm/v/create-web3" alt="Version">
+  </a>
+    <a href="https://www.npmjs.com/package/create-web3">
+    <img src="https://img.shields.io/npm/dm/create-web3" alt="Downloads per month">
+  </a>
+  <a href="/LICENSE">
+    <img src="https://img.shields.io/npm/l/create-web3" alt="License">
+  </a>
+</p>
 
 This boilerplate quickly creates a mono repo with 2 environments, a react frontend environment and a Ethereum development environment for writing, testing and deploying contracts.
 
 ## Quick Start Notes
 
-1.  Run `npx create-web3` to start install
+1.  To start install
+
+```bash
+npx create-web3
+```
+
 2.  Run `yarn` or `npm install` to install all the dependencies
 3.  Once installation is complete, `cd` into your app's directory and run `yarn chain` or `npm run chain` to start a local hardhat environment
 4.  Open another terminal and `cd` into your app's directory

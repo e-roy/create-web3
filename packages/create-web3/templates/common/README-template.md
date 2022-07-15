@@ -6,7 +6,12 @@ This boilerplate quickly creates a mono repo with 2 environments, a react fronte
 
 ## Quick Start Notes
 
-1.  Run `npx create-web3` to start install
+1.  To start install
+
+```bash
+npx create-web3
+```
+
 2.  Run `yarn` or `npm install` to install all the dependencies
 3.  Once installation is complete, `cd` into your app's directory and run `yarn chain` or `npm run chain` to start a local hardhat environment
 4.  Open another terminal and `cd` into your app's directory
