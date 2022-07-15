@@ -1,10 +1,10 @@
 # create-web3
 
-## A boilerplate for starting a web3 projects
+A boilerplate for starting a web3 projects
 
 [![Version](https://img.shields.io/npm/v/create-web3)](https://www.npmjs.com/package/create-web3) [![Downloads](https://img.shields.io/npm/dm/create-web3)](https://www.npmjs.com/package/create-web3)
 
-This boilerplate quickly creates a mono repo with 2 environments, a Next JS environment for front-end and a Hardhat environment for writing, testing and deploying contracts.
+This boilerplate quickly creates a mono repo with 2 environments, a react frontend environment and a Ethereum development environment for writing, testing and deploying contracts.
 
 ## Quick Start Notes
 
@@ -17,25 +17,30 @@ This boilerplate quickly creates a mono repo with 2 environments, a Next JS envi
 
 ## Technologies
 
-This project is built with the following open source libraries, frameworks and languages.
+This project is built with the following open source libraries, frameworks and languages. User choice of framework used, available in plain js or typescript.
 | Tech | Description |
 | --------------------------------------------- | ------------------------------------------------------------------ |
-| ------ | ------ Pick React Framework ------ |
-| [Next.js](https://nextjs.org/) | React Framework |
-| or | |
+| ------ | ------ React Frontend Environment ------ |
+| [Next JS](https://nextjs.org/) | React Framework |
 | [Vite JS](https://vitejs.dev/) | Next Generation Frontend Tooling |
-| ------ | ------ Pick EVM Framework ------ |
-| [Hardhat](https://hardhat.org/) | Ethereum development environment |
-| [hardhat-deploy](https://www.npmjs.com/package/hardhat-deploy) | A Hardhat Plugin For Replicable Deployments And Easy Testing |
-| or | |
-| [Foundry](https://getfoundry.sh/) | Ethereum development environment |
-| ------ | ------ |
+| ------ | ------ CSS Framework ------ |
+| none | |
+| [Tailwind](https://tailwindcss.com/) | A utility-first CSS framework |
+| [Chakra](https://chakra-ui.com/) | A simple, modular and accessible component library that gives you the building blocks you need to build your React applications. |
+| ------ | ------ Ethereum Development Environment ------ |
+| [Hardhat](https://hardhat.org/) | Ethereum development environment for professionals |
+| [Foundry](https://getfoundry.sh/) | a blazing fast, portable and modular toolkit for Ethereum application development written in Rust. |
+| ------ | ------ Included Libraries ------ |
 | [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
 | [RainbowKit](https://www.rainbowkit.com/docs/introduction) | RainbowKit is a React library that makes it easy to add wallet connection to your dapp. |
 
 ## Documentation
 
 Please visit [create-web3.xyz](https://create-web3.xyz) to view the full documentation.
+
+## Discussions
+
+If you have questions how to use, want to suggest a feature, or show off a project you created with create-web3, join [discussions on GitHub](https://github.com/e-roy/create-web3/discussions). I would love to hear from you. 🙂
 
 ## Issues
 

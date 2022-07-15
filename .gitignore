@@ -101,3 +101,5 @@ yarn.lock
 .dynamodb/
 
 out/
+
+.env

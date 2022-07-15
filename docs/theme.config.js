@@ -14,32 +14,35 @@ export default {
       </span>
     </>
   ),
-  head: (
-    <>
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta httpEquiv="Content-Language" content="en" />
-      <meta
-        name="description"
-        content="Create-Web3: A boilerplate for web3 projects"
-      />
-      <meta
-        name="og:description"
-        content="Create-Web3: A boilerplate for web3 projects"
-      />
-      <meta name="twitter:card" content="summary_large_image" />
-      {/* <meta name="twitter:image" content="https://nextra.vercel.app/og.png" /> */}
-      <meta name="twitter:site:domain" content="nextra.vercel.app" />
-      {/* <meta name="twitter:url" content="https://nextra.vercel.app" /> */}
-      <meta
-        name="og:title"
-        content="Create-Web3: A boilerplate for web3 projects"
-      />
-      {/* <meta name="og:image" content="https://nextra.vercel.app/og.png" /> */}
-      <meta name="apple-mobile-web-app-title" content="Create-Web3" />
-    </>
-  ),
+  head: ({ meta, title }) => {
+    const description =
+      meta.description ||
+      "create-web3 is a boilplate for creating and deploying dapps and smart contracts.  non opinionated, user choice of frameworks, and quick to setup.";
+    const title_ =
+      title && !title.startsWith("create-web3")
+        ? title + " – create-web3"
+        : "create-web3: A boilerplate to quickly create a new web3 project.";
+
+    return (
+      <>
+        {/* General */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Language" content="en" />
+        <title>{title_}</title>
+
+        {/* SEO */}
+        <meta name="description" content={description} />
+        <meta name="og:description" content={description} />
+        <meta name="og:title" content={title_} />
+        {/* <meta name="og:image" content="https://.png" /> */}
+        <meta name="twitter:card" content="summary" />
+
+        <meta name="apple-mobile-web-app-title" content="create-web3" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
+      </>
+    );
+  },
   search: true,
   prevLinks: true,
   nextLinks: true,
