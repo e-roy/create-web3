@@ -3,6 +3,7 @@ require('dotenv').config({ path: '../../.env' });
 
 require('hardhat-deploy');
 require('@nomiclabs/hardhat-ethers');
+require('@nomiclabs/hardhat-etherscan');
 
 const defaultNetwork = 'localhost';
 
@@ -81,5 +82,8 @@ module.exports = {
       default: 0, // here this will by default take the first account as deployer
     },
     tokenOwner: 1,
+    etherscan: {
+      apiKey: process.env.ETHERSCAN_API_KEY,
+    },
   },
 };

@@ -1,8 +1,9 @@
-import '@nomiclabs/hardhat-waffle'
+import '@nomiclabs/hardhat-waffle';
 import * as dotenv from 'dotenv';
-import { HardhatUserConfig } from "hardhat/config";
+import { HardhatUserConfig } from 'hardhat/config';
 import 'hardhat-deploy';
 import '@nomiclabs/hardhat-ethers';
+import '@nomiclabs/hardhat-etherscan';
 
 dotenv.config({ path: '../../.env' });
 const defaultNetwork = 'localhost';
@@ -82,6 +83,9 @@ const config: HardhatUserConfig = {
       default: 0, // here this will by default take the first account as deployer
     },
     tokenOwner: 1,
+    etherscan: {
+      apiKey: process.env.ETHERSCAN_API_KEY as string,
+    },
   },
 };
 
