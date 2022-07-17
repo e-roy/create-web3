@@ -16,7 +16,7 @@ npx create-web3
 3.  Once installation is complete, `cd` into your app's directory and run `yarn chain` or `npm run chain` to start a local hardhat environment
 4.  Open another terminal and `cd` into your app's directory
 5.  Run `yarn deploy` or `npm run deploy` to deploy the example contract locally
-6.  Run `yarn dev` or `npm run dev` to start your Next dev environment
+6.  Run `yarn dev` or `npm run dev` to start your FrontEnd dev environment
 
 ## Technologies
 

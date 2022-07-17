@@ -3,7 +3,7 @@
 A boilerplate for creating a web3 projects
 
 <p>
-  <a href="https://www.npmjs.com/package/wagmi">
+  <a href="https://www.npmjs.com/package/create-web3">
     <img src="https://img.shields.io/npm/v/create-web3" alt="Version">
   </a>
     <a href="https://www.npmjs.com/package/create-web3">
