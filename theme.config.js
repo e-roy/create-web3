@@ -17,7 +17,7 @@ export default {
   head: ({ meta, title }) => {
     const description =
       meta.description ||
-      "create-web3 is a boilplate for creating and deploying dapps and smart contracts.  non opinionated, user choice of frameworks, and quick to setup.";
+      "ankr is the web3 infrastructure company that provides a unified, decentralized, and secure platform for the web3 ecosystem.";
     const title_ =
       title && !title.startsWith("ankr")
         ? title + " ⚓️ ankr"
@@ -37,7 +37,7 @@ export default {
         {/* <meta name="og:image" content="https://.png" /> */}
         <meta name="twitter:card" content="summary" />
 
-        <meta name="apple-mobile-web-app-title" content="create-web3" />
+        <meta name="apple-mobile-web-app-title" content="ankr docs3" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </>
