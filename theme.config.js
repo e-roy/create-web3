@@ -1,6 +1,6 @@
 // import { useTheme } from "next-themes";
 
-const github = "https://github.com/";
+const github = "https://github.com/jcstein/ankrdocs";
 
 export default {
   github,
@@ -16,8 +16,7 @@ export default {
   ),
   head: ({ meta, title }) => {
     const description =
-      meta.description ||
-      "ankr is the web3 infrastructure company that provides a unified, decentralized, and secure platform for the web3 ecosystem.";
+      meta.description || "ankr is the web3 infrastructure company  ";
     const title_ =
       title && !title.startsWith("ankr")
         ? title + " ⚓️ ankr"
