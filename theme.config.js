@@ -28,6 +28,7 @@ export default {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
         <title>{title_}</title>
+        <meta name="favicon" content="/favicon.ico" />
 
         {/* SEO */}
         <meta name="description" content={description} />
@@ -51,6 +52,6 @@ export default {
   footer: true,
   footerEditLink: "",
   footerText: <>MIT {new Date().getFullYear()} © Ankr.com</>,
-  unstable_faviconGlyph: "🧱",
+  // unstable_faviconGlyph: "🧱",
   unstable_flexsearch: true,
 };
