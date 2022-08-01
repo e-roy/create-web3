@@ -5,22 +5,22 @@ const github = "https://github.com/jcstein/ankrdocs";
 export default {
   github,
   projectLink: github,
-  titleSuffix: "⚓️ ankr",
+  titleSuffix: "⚓️ Ankr",
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">ankr docs</span>
+      <span className="mr-2 font-extrabold md:inline">Ankr Docs</span>
       <span className="text-gray-600 dark:text-gray-200 font-normal hidden md:inline">
-        the web3 infrastructure company
+        The Web3 Infrastructure Company
       </span>
     </>
   ),
   head: ({ meta, title }) => {
     const description =
-      meta.description || "ankr is the web3 infrastructure company  ";
+      meta.description || "Ankr is a Web3 Infrastructure Company";
     const title_ =
-      title && !title.startsWith("ankr")
-        ? title + " ⚓️ ankr"
-        : "ankr ⚓️ the web3 infrastructure company";
+      title && !title.startsWith("Ankr")
+        ? title + " ⚓️ Ankr"
+        : "Ankr ⚓️ The Web3 Infrastructure Company";
 
     return (
       <>
@@ -36,7 +36,7 @@ export default {
         {/* <meta name="og:image" content="https://.png" /> */}
         <meta name="twitter:card" content="summary" />
 
-        <meta name="apple-mobile-web-app-title" content="ankr docs3" />
+        <meta name="apple-mobile-web-app-title" content="Ankr Docs" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </>
@@ -50,7 +50,7 @@ export default {
   },
   footer: true,
   footerEditLink: "",
-  footerText: <>MIT {new Date().getFullYear()} © ankr</>,
+  footerText: <>MIT {new Date().getFullYear()} © Ankr.com</>,
   unstable_faviconGlyph: "🧱",
   unstable_flexsearch: true,
 };
