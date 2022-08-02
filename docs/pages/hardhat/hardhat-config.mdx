@@ -1,0 +1,36 @@
+# hardhat-config
+
+## Setting Solidity Versions
+
+create-web3 ships with configuration for `solidity version 0.8.10`
+
+```jsx
+module.exports = {
+  solidity: '0.8.10',
+
+...
+}
+```
+
+If your contract requires another version of solidity, you will need to make a change to your hardhat.config file.
+You can simply change versions here.
+
+If you have contracts that require multiple versions of solidity to compile, change solidity to an object to add and array of compiler versions
+
+```jsx
+module.exports = {
+  // solidity: "0.8.10",
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.10",
+      },
+      {
+        version: "0.6.0",
+      },
+    ],
+  },
+
+...
+}
+```

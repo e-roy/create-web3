@@ -12,6 +12,7 @@ const defaultNetwork = 'localhost';
  */
 module.exports = {
   solidity: '0.8.10',
+
   defaultNetwork,
 
   networks: {
