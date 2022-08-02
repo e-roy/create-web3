@@ -1,6 +1,7 @@
 {
   "file-structure": "File Structure",
   "local-network": "Local Network",
+  "hardhat-config": "hardhat-config file",
   "greeter": "Greeter Contract",
   "deploy-script": "Deploy Scripts",
   "errors": "Common Errors"
