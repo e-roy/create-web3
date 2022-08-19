@@ -38,7 +38,7 @@ const hardhatChain: Chain = {
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, hardhatChain],
-  [alchemyProvider({ alchemyId }), publicProvider()]
+  [alchemyProvider({ apiKey: alchemyId }), publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
