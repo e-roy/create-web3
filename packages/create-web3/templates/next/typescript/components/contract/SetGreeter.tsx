@@ -17,8 +17,8 @@ export const SetGreeter = () => {
   const greeterABI = allContracts[chainId][0].contracts.Greeter.abi;
 
   const greeterContract = useContract({
-    addressOrName: greeterAddress,
-    contractInterface: greeterABI,
+    address: greeterAddress,
+    abi: greeterABI,
     signerOrProvider: signerData,
   });
 
@@ -36,7 +36,7 @@ export const SetGreeter = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const tx = await greeterContract.setGreeting(newGreeter);
+      const tx = await greeterContract?.setGreeting(newGreeter);
       await tx.wait();
       setNewGreeter('');
       setLoading(false);

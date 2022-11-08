@@ -17,8 +17,8 @@ export const GetGreeter = () => {
   const greeterABI = allContracts[chainId][0].contracts.Greeter.abi;
 
   const greeterContract = useContract({
-    addressOrName: greeterAddress,
-    contractInterface: greeterABI,
+    address: greeterAddress,
+    abi: greeterABI,
     signerOrProvider: provider,
   });
 

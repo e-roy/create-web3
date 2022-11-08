@@ -33,7 +33,7 @@ const tryGitInit = (root) => {
     execSync('git checkout -b main', { stdio: 'ignore' });
 
     execSync('git add -A', { stdio: 'ignore' });
-    execSync('git commit -m "Initial commit from Create Next App"', {
+    execSync('git commit -m "Initial commit from create-web3"', {
       stdio: 'ignore',
     });
     return true;
