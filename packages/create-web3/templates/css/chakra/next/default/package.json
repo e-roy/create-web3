@@ -10,16 +10,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.2.3",
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
-    "@rainbow-me/rainbowkit": "^0.7.4",
+    "@chakra-ui/react": "^2.4.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@rainbow-me/rainbowkit": "^0.8.1",
     "ethers": "^5.7.2",
-    "framer-motion": "^6.4.3",
-    "next": "^13.0.2",
+    "framer-motion": "^9.0.1",
+    "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wagmi": "^0.7.13"
+    "wagmi": "^0.11.3"
   },
   "devDependencies": {
     "eslint": "^8.27.0",

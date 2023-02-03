@@ -4,35 +4,23 @@ import App from './App';
 import './index.css';
 
 // Imports
-import { chain, createClient, WagmiConfig, configureChains } from 'wagmi';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { createClient, WagmiConfig, configureChains } from 'wagmi';
+import {
+  mainnet,
+  polygon,
+  polygonMumbai,
+  optimism,
+  arbitrum,
+  hardhat,
+} from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
-// Get environment variables
-const alchemyId = import.meta.env.VITE_ALCHEMY_ID;
-// const infuraId = import.meta.env.VITE_INFURA_ID;
-
-const hardhatChain = {
-  id: 31337,
-  name: 'Hardhat',
-  nativeCurrency: {
-    decimals: 18,
-    name: 'Hardhat',
-    symbol: 'HARD',
-  },
-  network: 'hardhat',
-  rpcUrls: {
-    default: 'http://127.0.0.1:8545',
-  },
-  testnet: true,
-};
-
-const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, hardhatChain],
-  [alchemyProvider({ apiKey: alchemyId }), publicProvider()]
+const { chains, provider, webSocketProvider } = configureChains(
+  [mainnet, polygon, polygonMumbai, optimism, arbitrum, hardhat],
+  [publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
