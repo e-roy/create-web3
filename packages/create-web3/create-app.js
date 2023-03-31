@@ -88,17 +88,8 @@ const init = async ({
     deploy: 'yarn workspace @create-web3/backend deploy',
   };
 
-  const foundryScripts = {
-    chain: 'yarn workspace @create-web3/backend chain',
-    compile: 'yarn workspace @create-web3/backend compile',
-    test: 'yarn workspace @create-web3/backend test',
-    clean: 'yarn workspace @create-web3/backend clean',
-    gas: 'yarn workspace @create-web3/backend gas',
-  };
-
   const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;
-  const backendScripts =
-    backend === 'hardhat' ? hardhatScripts : foundryScripts;
+  const backendScripts = hardhatScripts
 
   const packageJson = {
     name: appName,
@@ -171,7 +162,7 @@ const init = async ({
   /**
    * Copy backend files.
    */
-  const backendpath = backend === 'hardhat' ? `hardhat/${template}` : 'foundry';
+  const backendpath = `hardhat/${template}`;
 
   await cpy('**', root + '/packages/backend/', {
     parents: true,

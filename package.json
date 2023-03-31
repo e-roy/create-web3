@@ -10,8 +10,7 @@
     "vite",
     "react",
     "wagmi",
-    "hardhat",
-    "foundry"
+    "hardhat"
   ],
   "scripts": {
     "dev": "yarn workspace @create-web3/next dev",
@@ -38,10 +37,6 @@
     "clean:ts": "yarn workspace @create-web3/hardhat-ts clean",
     "deploy:ts": "yarn workspace @create-web3/hardhat-ts deploy",
     "test:ts": "yarn workspace @create-web3/hardhat-ts test",
-    "chain:foundry": "yarn workspace @create-web3/foundry chain",
-    "compile:foundry": "yarn workspace @create-web3/foundry compile",
-    "test:foundry": "yarn workspace @create-web3/foundry test",
-    "clean:foundry": "yarn workspace @create-web3/foundry clean",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "lerna publish from-package",
     "create-web3": "node ./packages/create-web3/index.js",
@@ -53,7 +48,6 @@
   "workspaces": [
     "packages/*",
     "packages/create-web3/*",
-    "packages/create-web3/templates/foundry/*",
     "packages/create-web3/templates/hardhat/*",
     "packages/create-web3/templates/next/*",
     "packages/create-web3/templates/vite/*",
