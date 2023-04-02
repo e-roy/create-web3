@@ -19,7 +19,6 @@ artifacts
 /packages/backend/node_modules
 /packages/backend/deployments/\*
 
-# Foundry files
 
 /packages/backend/cache
 /packages/backend/out

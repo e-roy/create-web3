@@ -85,10 +85,9 @@ async function run() {
   const resBackend = await prompts({
     type: 'select',
     name: 'backend',
-    message: 'Backend : Hardhat or Foundry?',
+    message: 'Backend : Hardhat',
     choices: [
-      { title: 'Hardhat', value: 'hardhat' },
-      { title: 'Foundry - currently testing', value: 'foundry' },
+      { title: 'Hardhat', value: 'hardhat' }
     ],
   });
 
@@ -157,7 +156,7 @@ async function notifyUpdate() {
       );
       console.log(
         'You can update by running: ' +
-          chalk.cyan(`npm install --global create-web3`)
+        chalk.cyan(`npm install --global create-web3`)
         // chalk.cyan(
         //   pkgManager === 'yarn'
         //     ? 'yarn global add create-web3'
