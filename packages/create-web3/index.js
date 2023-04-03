@@ -85,9 +85,8 @@ async function run() {
   const resBackend = await prompts({
     type: 'select',
     name: 'backend',
-    message: 'Backend : Hardhat',
+    message: 'Backend : ',
     choices: [
-      { title: 'Hardhat', value: 'hardhat' }
     ],
   });
 
