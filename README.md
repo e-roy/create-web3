@@ -1,16 +1,16 @@
-# create-web3
+# create-permaweb-app
 
 A boilerplate for creating a web3 projects
 
 <p>
-  <a href="https://www.npmjs.com/package/create-web3">
-    <img src="https://img.shields.io/npm/v/create-web3" alt="Version">
+  <a href="https://www.npmjs.com/package/create-permaweb-app">
+    <img src="https://img.shields.io/npm/v/create-permaweb-app" alt="Version">
   </a>
-    <a href="https://www.npmjs.com/package/create-web3">
-    <img src="https://img.shields.io/npm/dm/create-web3" alt="Downloads per month">
+    <a href="https://www.npmjs.com/package/create-permaweb-app">
+    <img src="https://img.shields.io/npm/dm/create-permaweb-app" alt="Downloads per month">
   </a>
   <a href="/LICENSE">
-    <img src="https://img.shields.io/npm/l/create-web3" alt="License">
+    <img src="https://img.shields.io/npm/l/create-permaweb-app" alt="License">
   </a>
 </p>
 
@@ -21,7 +21,7 @@ This boilerplate quickly creates a mono repo with 2 environments, a react fronte
 1.  To start install
 
 ```bash
-npx create-web3
+npx create-permaweb-app
 ```
 
 2.  Run `yarn` or `npm install` to install all the dependencies
@@ -43,17 +43,16 @@ This project is built with the following open source libraries, frameworks and l
 | ------ | ------ Arweave Development Environment ------ |
 
 | ------ | ------ Included Libraries ------ |
-| [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
 | [RainbowKit](https://www.rainbowkit.com/docs/introduction) | RainbowKit is a React library that makes it easy to add wallet connection to your dapp. |
 
 ## Documentation
 
-Please visit [create-web3.xyz](https://create-web3.xyz) to view the full documentation.
+Please visit [create-permaweb-app.xyz](https://create-permaweb-app.xyz) to view the full documentation.
 
 ## Discussions
 
-If you have questions how to use, want to suggest a feature, or show off a project you created with create-web3, join [discussions on GitHub](https://github.com/e-roy/create-web3/discussions). I would love to hear from you. 🙂
+If you have questions how to use, want to suggest a feature, or show off a project you created with create-permaweb-app, join [discussions on GitHub](https://github.com/ropats16/create-permaweb-app/discussions). I would love to hear from you. 🙂
 
 ## Issues
 
-If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/e-roy/create-web3/issues)
+If you find a bug or would like to request a feature, please visit [ISSUES](https://github.com/ropats16/create-permaweb-app/issues)

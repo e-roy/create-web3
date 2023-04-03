@@ -1,0 +1,41 @@
+{
+  "name": "create-permaweb-app",
+  "version": "0.4.10",
+  "description": "",
+  "scripts": {},
+  "keywords": [
+    "create-permaweb-app",
+    "web3",
+    "boilerplate",
+    "nextjs",
+    "react",
+    "vite",
+    "rainbowkit",
+    "dapp"
+  ],
+  "author": "Eric Roupe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ropats16/create-permaweb-app",
+    "directory": "packages/create-permaweb-app"
+  },
+  "homepage": "create-permaweb-app.xyz",
+  "bin": {
+    "create-permaweb-app": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "2.4.2",
+    "commander": "^8.3.0",
+    "cpy": "^8.1.2",
+    "cross-spawn": "^7.0.3",
+    "prompts": "^2.4.2",
+    "rimraf": "^3.0.2",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "gitHead": "da4ed9ad6fa2d4386d4e35e60c221fda2bc5ccaa"
+}
