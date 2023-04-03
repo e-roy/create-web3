@@ -9,8 +9,7 @@
     "nextjs",
     "vite",
     "react",
-    "wagmi",
-    "hardhat"
+    "wagmi"
   ],
   "scripts": {
     "dev": "yarn workspace @create-web3/next dev",
@@ -27,16 +26,6 @@
     "dev:vite:ts": "yarn workspace @create-web3/vite-ts dev",
     "build:vite:ts": "yarn workspace @create-web3/vite-ts build",
     "preview:vite:ts": "yarn workspace @create-web3/vite-ts preview",
-    "chain": "yarn workspace @create-web3/hardhat chain",
-    "clean": "yarn workspace @create-web3/hardhat clean",
-    "deploy": "yarn workspace @create-web3/hardhat deploy",
-    "test": "yarn workspace @create-web3/hardhat test",
-    "deploy:rinkeby": "yarn workspace @create-web3/hardhat deploy:rinkeby",
-    "deploy:mainnet": "yarn workspace @create-web3/hardhat deploy:mainnet",
-    "chain:ts": "yarn workspace @create-web3/hardhat-ts chain",
-    "clean:ts": "yarn workspace @create-web3/hardhat-ts clean",
-    "deploy:ts": "yarn workspace @create-web3/hardhat-ts deploy",
-    "test:ts": "yarn workspace @create-web3/hardhat-ts test",
     "update-version": "lerna version --force-publish --no-private",
     "publish-latest": "lerna publish from-package",
     "create-web3": "node ./packages/create-web3/index.js",
@@ -48,7 +37,6 @@
   "workspaces": [
     "packages/*",
     "packages/create-web3/*",
-    "packages/create-web3/templates/hardhat/*",
     "packages/create-web3/templates/next/*",
     "packages/create-web3/templates/vite/*",
     "docs/"
