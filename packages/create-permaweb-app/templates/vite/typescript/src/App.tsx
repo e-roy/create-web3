@@ -1,11 +1,9 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { GetGreeter, SetGreeter } from './components';
 
 function App() {
   return (
     <div className="">
       <header style={{ padding: '1rem' }}>
-        <ConnectButton />
       </header>
       <main
         style={{
