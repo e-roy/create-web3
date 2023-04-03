@@ -13,10 +13,8 @@ npx create-web3
 ```
 
 2.  Run `yarn` or `npm install` to install all the dependencies
-3.  Once installation is complete, `cd` into your app's directory and run `yarn chain` or `npm run chain` to start a local hardhat environment
-4.  Open another terminal and `cd` into your app's directory
-5.  Run `yarn deploy` or `npm run deploy` to deploy the example contract locally
-6.  Run `yarn dev` or `npm run dev` to start your FrontEnd dev environment
+3.  Once installation is complete, `cd` into your app's directory.
+4.  Run `yarn dev` or `npm run dev` to start your FrontEnd dev environment
 
 ## Technologies
 
@@ -30,8 +28,8 @@ This project is built with the following open source libraries, frameworks and l
 | none | |
 | [Tailwind](https://tailwindcss.com/) | A utility-first CSS framework |
 | [Chakra](https://chakra-ui.com/) | A simple, modular and accessible component library that gives you the building blocks you need to build your React applications. |
-| ------ | ------ Ethereum Development Environment ------ |
-| [Hardhat](https://hardhat.org/) | Ethereum development environment for professionals |
+| ------ | ------ Arweave Development Environment ------ |
+| [Arweave]() | Arweave development environment for professionals |
 | ------ | ------ Included Libraries ------ |
 | [WAGMI](https://wagmi.sh/) | A set of React Hooks for Web3 |
 | [RainbowKit](https://www.rainbowkit.com/docs/introduction) | RainbowKit is a React library that makes it easy to add wallet connection to your dapp. |

@@ -11,7 +11,6 @@ const checkFolder = require('./helpers/is-folder-empty');
 const gitInit = require('./helpers/git');
 
 // const installNext = require('./helpers/install-next');
-// const installHardhat = require('./helpers/install-hardhat');
 
 const init = async ({
   appPath,
@@ -80,16 +79,11 @@ const init = async ({
     serve: 'yarn workspace @create-web3/frontend serve',
   };
 
-  const hardhatScripts = {
-    chain: 'yarn workspace @create-web3/backend chain',
-    compile: 'yarn workspace @create-web3/backend compile',
-    test: 'yarn workspace @create-web3/backend test',
-    clean: 'yarn workspace @create-web3/backend clean',
-    deploy: 'yarn workspace @create-web3/backend deploy',
+  const arweaveScripts = {
   };
 
   const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;
-  const backendScripts = hardhatScripts
+  const backendScripts = arweaveScripts
 
   const packageJson = {
     name: appName,
@@ -127,10 +121,6 @@ const init = async ({
    * Create Next package.json and install dependencies.
    */
   // await installNext.installNext(appPath, installFlags, typescript);
-  /**
-   * Create hardhat package.json and install dependencies.
-   */
-  // await installHardhat.installHardhat(appPath, installFlags, typescript);
 
   console.log();
   /**
@@ -162,11 +152,11 @@ const init = async ({
   /**
    * Copy backend files.
    */
-  const backendpath = `hardhat/${template}`;
+  const backendpath = '';
 
   await cpy('**', root + '/packages/backend/', {
     parents: true,
-    // cwd: path.join(__dirname, "templates", "hardhat", template),
+    // cwd: path.join(__dirname, "templates", template),
     cwd: path.join(__dirname, 'templates', backendpath),
 
     filter: (name) => {
