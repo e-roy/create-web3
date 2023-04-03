@@ -121,10 +121,6 @@ const init = async ({
    * Create Next package.json and install dependencies.
    */
   // await installNext.installNext(appPath, installFlags, typescript);
-  /**
-   * Create hardhat package.json and install dependencies.
-   */
-  // await installHardhat.installHardhat(appPath, installFlags, typescript);
 
   console.log();
   /**
@@ -156,11 +152,11 @@ const init = async ({
   /**
    * Copy backend files.
    */
-  const backendpath = `hardhat/${template}`;
+  const backendpath = '';
 
   await cpy('**', root + '/packages/backend/', {
     parents: true,
-    // cwd: path.join(__dirname, "templates", "hardhat", template),
+    // cwd: path.join(__dirname, "templates", template),
     cwd: path.join(__dirname, 'templates', backendpath),
 
     filter: (name) => {
