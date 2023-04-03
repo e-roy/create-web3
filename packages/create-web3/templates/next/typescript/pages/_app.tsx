@@ -11,7 +11,6 @@ import {
   polygonMumbai,
   optimism,
   arbitrum,
-  hardhat,
 } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
@@ -21,7 +20,7 @@ import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { useIsMounted } from '../hooks';
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [mainnet, polygon, polygonMumbai, optimism, arbitrum, hardhat],
+  [mainnet, polygon, polygonMumbai, optimism, arbitrum],
   [publicProvider()]
 );
 

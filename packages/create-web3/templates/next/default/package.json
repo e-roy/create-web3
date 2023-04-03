@@ -1,7 +1,7 @@
 {
   "name": "@create-web3/next",
   "version": "0.1.0",
-  "description": "mono repo with hardhat and next",
+  "description": "mono repo with arweave and next",
   "private": true,
   "scripts": {
     "dev": "next dev",

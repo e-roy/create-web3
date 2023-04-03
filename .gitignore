@@ -10,7 +10,7 @@ package-lock.json
 .DS_Store
 
 
-# hardhat files
+# backend files
 cache/
 artifacts/
 deployments/

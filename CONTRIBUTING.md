@@ -29,12 +29,6 @@ cd create-web3
 # packages in the monorepo together.
 yarn install
 
-# all development can be done from the root folder
-# to start a local hardhat chain, in one terminal
-yarn chain
-
-# in another terminal, deploy the contract locally with
-yarn deploy
 # then you can start developing with
 yarn dev
 
