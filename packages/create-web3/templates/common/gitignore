@@ -12,7 +12,7 @@ coverage
 coverage.json
 typechain
 
-# Hardhat files
+# Backend files
 
 cache
 artifacts
