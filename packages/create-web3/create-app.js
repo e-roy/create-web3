@@ -11,7 +11,6 @@ const checkFolder = require('./helpers/is-folder-empty');
 const gitInit = require('./helpers/git');
 
 // const installNext = require('./helpers/install-next');
-// const installHardhat = require('./helpers/install-hardhat');
 
 const init = async ({
   appPath,
@@ -80,16 +79,11 @@ const init = async ({
     serve: 'yarn workspace @create-web3/frontend serve',
   };
 
-  const hardhatScripts = {
-    chain: 'yarn workspace @create-web3/backend chain',
-    compile: 'yarn workspace @create-web3/backend compile',
-    test: 'yarn workspace @create-web3/backend test',
-    clean: 'yarn workspace @create-web3/backend clean',
-    deploy: 'yarn workspace @create-web3/backend deploy',
+  const arweaveScripts = {
   };
 
   const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;
-  const backendScripts = hardhatScripts
+  const backendScripts = arweaveScripts
 
   const packageJson = {
     name: appName,
