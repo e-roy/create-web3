@@ -23,7 +23,7 @@ To setup your local dev environment:
 ```sh
 # Clone the repo
 
-cd create-web3
+cd create-permaweb-app
 
 # yarn install also runs `preconstruct dev`, which dynamically links all
 # packages in the monorepo together.

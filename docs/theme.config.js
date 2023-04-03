@@ -1,6 +1,6 @@
 // import { useTheme } from "next-themes";
 
-const github = "https://github.com/e-roy/create-web3";
+const github = "https://github.com/ropats16/create-permaweb-app";
 
 export default {
   github,
@@ -8,7 +8,7 @@ export default {
   titleSuffix: " – Create Web3",
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Create-Web3</span>
+      <span className="mr-2 font-extrabold hidden md:inline">create-permaweb-app</span>
       <span className="text-gray-600 dark:text-gray-200 font-normal hidden md:inline">
         A boilerplate for web3 projects
       </span>
@@ -17,11 +17,11 @@ export default {
   head: ({ meta, title }) => {
     const description =
       meta.description ||
-      "create-web3 is a boilplate for creating and deploying dapps and smart contracts.  non opinionated, user choice of frameworks, and quick to setup.";
+      "create-permaweb-app is a boilplate for creating and deploying dapps and smart contracts.  non opinionated, user choice of frameworks, and quick to setup.";
     const title_ =
-      title && !title.startsWith("create-web3")
-        ? title + " – create-web3"
-        : "create-web3: A boilerplate to quickly create a new web3 project.";
+      title && !title.startsWith("create-permaweb-app")
+        ? title + " – create-permaweb-app"
+        : "create-permaweb-app: A boilerplate to quickly create a new web3 project.";
 
     return (
       <>
@@ -37,7 +37,7 @@ export default {
         {/* <meta name="og:image" content="https://.png" /> */}
         <meta name="twitter:card" content="summary" />
 
-        <meta name="apple-mobile-web-app-title" content="create-web3" />
+        <meta name="apple-mobile-web-app-title" content="create-permaweb-app" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </>
