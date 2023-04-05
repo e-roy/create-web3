@@ -152,33 +152,33 @@ const init = async ({
   /**
    * Copy backend files.
    */
-  const backendpath = '';
+  // const backendpath = '';
 
-  await cpy('**', root + '/packages/backend/', {
-    parents: true,
-    // cwd: path.join(__dirname, "templates", template),
-    cwd: path.join(__dirname, 'templates', backendpath),
+  // await cpy('**', root + '/packages/backend/', {
+  //   parents: true,
+  //   // cwd: path.join(__dirname, "templates", template),
+  //   cwd: path.join(__dirname, 'templates', backendpath),
 
-    filter: (name) => {
-      if (name.relativePath === 'package.json') {
-        return false;
-      }
-      return true;
-    },
-    rename: (name) => {
-      switch (name) {
-        case 'package-template.json': {
-          return 'package.json';
-        }
-        case 'gitmodules': {
-          return '.'.concat(name);
-        }
-        default: {
-          return name;
-        }
-      }
-    },
-  });
+  //   filter: (name) => {
+  //     if (name.relativePath === 'package.json') {
+  //       return false;
+  //     }
+  //     return true;
+  //   },
+  //   rename: (name) => {
+  //     switch (name) {
+  //       case 'package-template.json': {
+  //         return 'package.json';
+  //       }
+  //       case 'gitmodules': {
+  //         return '.'.concat(name);
+  //       }
+  //       default: {
+  //         return name;
+  //       }
+  //     }
+  //   },
+  // });
 
   /**
    * Copy frontend files.

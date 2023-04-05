@@ -82,13 +82,13 @@ async function run() {
     ],
   });
 
-  const resBackend = await prompts({
-    type: 'select',
-    name: 'backend',
-    message: 'Backend : ',
-    choices: [
-    ],
-  });
+  // const resBackend = await prompts({
+  //   type: 'select',
+  //   name: 'backend',
+  //   message: 'Backend : ',
+  //   choices: [
+  //   ],
+  // });
 
   const resTypescript = await prompts({
     type: 'select',
@@ -131,7 +131,7 @@ async function run() {
       useNpm: resUseNpm.useNpm,
       typescript: resTypescript.typescript,
       frontend: resFrontend.frontend,
-      backend: resBackend.backend,
+      // backend: resBackend.backend,
       css: resCSS.css,
     });
   } catch (error) {
