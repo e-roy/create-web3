@@ -1,4 +1,3 @@
-import { GetGreeter, SetGreeter } from './components';
 
 function App() {
   return (
@@ -15,8 +14,6 @@ function App() {
           alignItems: 'center',
         }}
       >
-        <GetGreeter />
-        <SetGreeter />
       </main>
     </div>
   );
