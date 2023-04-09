@@ -61,10 +61,10 @@ async function run() {
     }
   }
 
-  const resFrontend = await prompts({
+  const resFramework = await prompts({
     type: 'select',
-    name: 'frontend',
-    message: 'Frontend : React w/ Next or Vite?',
+    name: 'framework',
+    message: 'Framework : React w/ Next or Vite?',
     choices: [
       { title: 'Next', value: 'next' },
       { title: 'Vite', value: 'vite' },
@@ -130,7 +130,7 @@ async function run() {
       appPath: resolvedProjectPath,
       useNpm: resUseNpm.useNpm,
       typescript: resTypescript.typescript,
-      frontend: resFrontend.frontend,
+      framework: resFramework.framework,
       // backend: resBackend.backend,
       css: resCSS.css,
     });
