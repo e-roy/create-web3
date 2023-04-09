@@ -6,27 +6,19 @@ const cpy = require('cpy');
 const checkWriteable = require('./helpers/is-writeable');
 const makeDir = require('./helpers/make-dir');
 const checkFolder = require('./helpers/is-folder-empty');
-// const checkYarn = require('./helpers/should-use-yarn');
-// const checkOnline = require('./helpers/is-online');
 const gitInit = require('./helpers/git');
-
-// const installNext = require('./helpers/install-next');
 
 const init = async ({
   appPath,
   useNpm,
   typescript,
-  frontend,
+  framework,
   backend,
   css,
 }) => {
   console.log('running create-permaweb-app');
-  // console.log(`appPath: ${appPath}`);
-  // console.log(`useNpm: ${useNpm}`);
-  // console.log(typescript);
   const template = typescript ? 'typescript' : 'default';
   const root = path.resolve(appPath);
-  // console.log('template: ', template);
 
   if (!(await checkWriteable.isWriteable(path.dirname(root)))) {
     console.error(
@@ -45,13 +37,11 @@ const init = async ({
     process.exit(1);
   }
 
-  await makeDir.makeDir(path.join(root, 'packages'));
-  await makeDir.makeDir(path.join(root, 'packages', 'frontend'));
-  await makeDir.makeDir(path.join(root, 'packages', 'backend'));
+  // await makeDir.makeDir(path.join(root, 'packages'));
+  // await makeDir.makeDir(path.join(root, 'packages', 'frontend'));
+  // await makeDir.makeDir(path.join(root, 'packages', 'backend'));
 
-  // const useYarn = useNpm ? false : checkYarn.shouldUseYarn();
   const useYarn = useNpm ? false : true;
-  // const isOnline = !useYarn || (await checkOnline.getOnline());
   const originalDirectory = process.cwd();
 
   const displayedCommand = useYarn ? 'yarn' : 'npm';
@@ -82,13 +72,13 @@ const init = async ({
   const arweaveScripts = {
   };
 
-  const frontendScripts = frontend === 'vite' ? viteScripts : nextScripts;
+  const frontendScripts = framework === 'vite' ? viteScripts : nextScripts;
   const backendScripts = arweaveScripts
 
   const packageJson = {
     name: appName,
     version: '0.0.1',
-    description: `create-permaweb-app monorepo quickstart with ${frontend} and ${backend}`,
+    description: `create-permaweb-app monorepo quickstart with ${framework} and ${backend}`,
     main: 'index.js',
     private: true,
     scripts: {
@@ -184,9 +174,9 @@ const init = async ({
    * Copy frontend files.
    */
 
-  await cpy('**', root + '/packages/frontend/', {
+  await cpy('**', root + '/', {
     parents: true,
-    cwd: path.join(__dirname, 'templates', frontend, template),
+    cwd: path.join(__dirname, 'templates', framework, template),
     filter: (name) => {
       if (name.relativePath === 'package.json') {
         return false;
@@ -210,9 +200,9 @@ const init = async ({
    */
 
   if (css) {
-    await cpy('**', root + '/packages/frontend/', {
+    await cpy('**', root + '/', {
       parents: true,
-      cwd: path.join(__dirname, 'templates/css', css, frontend, template),
+      cwd: path.join(__dirname, 'templates/css', css, framework, template),
     });
   }
 
